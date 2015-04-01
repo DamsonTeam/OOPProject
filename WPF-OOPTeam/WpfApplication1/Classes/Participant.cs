@@ -4,8 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Classes.Interfaces;
 
-namespace Test
+namespace Classes
 {
     public class Participant : Person, IParticipant, IDriver
     {

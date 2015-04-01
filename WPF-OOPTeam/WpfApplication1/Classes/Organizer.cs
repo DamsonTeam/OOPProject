@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 
-namespace Test
+namespace Classes
 {
+    using Classes.Enumerations;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using Classes.Interfaces;
+
     public class Organizer : Participant, IParticipant
     {
         private Event eventToOrganize;
@@ -12,9 +16,10 @@ namespace Test
         public Organizer()
         { }
 
-        public Organizer (string name, string gender, Event eventToJoin, string email, string gsm, decimal moneyPaid) 
-            : base (name, eventToJoin, email, gsm, moneyPaid)
+        public Organizer (string firstName, string lastName, Gender gender, Event eventToJoin, string email, string gsm, decimal moneyPaid) 
+            : base (firstName, lastName, eventToJoin, email, gsm, moneyPaid)
         {
+
         }
 
         public Event EventToOrganize

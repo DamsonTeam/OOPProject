@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Classes.Enumerations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Test.Enumerations;
 
-namespace Test
+namespace Classes
 {
     public abstract class Person
     {
@@ -14,7 +14,7 @@ namespace Test
         {
 
         }
-        public Person(string firstName, string lastName, Gender sex = Gender.nonSpecified)
+        public Person(string firstName, string lastName, Gender sex = Gender.notSpecified)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
