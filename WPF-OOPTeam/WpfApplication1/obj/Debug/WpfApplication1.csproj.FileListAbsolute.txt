@@ -76,3 +76,5 @@ E:\Telerik Academy 2015\C# OOP\DamsonTeam\WPF-OOPTeam\WpfApplication1\obj\Debug\
 E:\Telerik Academy 2015\C# OOP\DamsonTeam\WPF-OOPTeam\WpfApplication1\obj\Debug\WpfApplication1.g.resources
 E:\Telerik Academy 2015\C# OOP\DamsonTeam\WPF-OOPTeam\WpfApplication1\obj\Debug\WpfApplication1.Properties.Resources.resources
 E:\Telerik Academy 2015\C# OOP\DamsonTeam\WPF-OOPTeam\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
+E:\Telerik Academy 2015\C# OOP\DamsonTeam\WPF-OOPTeam\WpfApplication1\bin\Debug\EventScheduler.Data.dll
+E:\Telerik Academy 2015\C# OOP\DamsonTeam\WPF-OOPTeam\WpfApplication1\bin\Debug\EventScheduler.Data.pdb

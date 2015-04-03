@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
-using Classes;
+using EventScheduler.Data;
 
 namespace WpfApplication1
 {

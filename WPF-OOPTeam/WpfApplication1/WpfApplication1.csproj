@@ -53,10 +53,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\AnimationStaff.cs" />
-    <Compile Include="Classes\Cook.cs" />
-    <Compile Include="Classes\DJ.cs" />
-    <Compile Include="Classes\RestaurantStaff.cs" />
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -69,21 +65,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\Admin.cs" />
-    <Compile Include="Classes\Enumerations\Gender.cs" />
-    <Compile Include="Classes\Interfaces\IRequiredStaff.cs" />
-    <Compile Include="Classes\Enumerations\PaymentMethod.cs" />
-    <Compile Include="Classes\Interfaces\IDriver.cs" />
-    <Compile Include="Classes\Event.cs" />
-    <Compile Include="Classes\EventStaff.cs" />
-    <Compile Include="Classes\Interfaces\IParticipant.cs" />
-    <Compile Include="Classes\Location.cs" />
-    <Compile Include="Classes\Organizer.cs" />
-    <Compile Include="Classes\Participant.cs" />
-    <Compile Include="Classes\PaymentMethod.cs" />
-    <Compile Include="Classes\Person.cs" />
-    <Compile Include="Classes\Singer.cs" />
-    <Compile Include="Classes\Waiter.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -110,7 +91,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Classes\ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -122,6 +102,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resourses\img.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventScheduler.Data\EventScheduler.Data.csproj">
+      <Project>{85d9bf5d-4587-43a2-899b-7a14e296937a}</Project>
+      <Name>EventScheduler.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Classes;
+using EventScheduler.Data;
 
 namespace WpfApplication1
 {
@@ -25,8 +25,8 @@ namespace WpfApplication1
         public Login()
         {
             InitializeComponent();
-            MyLoginWindow.Top = (System.Windows.SystemParameters.PrimaryScreenHeight / 2) - MyLoginWindow.Height;
-            MyLoginWindow.Left = (System.Windows.SystemParameters.PrimaryScreenWidth / 2) - MyLoginWindow.Width;
+            MyLoginWindow.Top = (SystemParameters.PrimaryScreenHeight / 2) - MyLoginWindow.Height;
+            MyLoginWindow.Left = (SystemParameters.PrimaryScreenWidth / 2) - MyLoginWindow.Width;
             //win.Show();
             txtBoxForPassWord.Visibility = System.Windows.Visibility.Hidden;
             
