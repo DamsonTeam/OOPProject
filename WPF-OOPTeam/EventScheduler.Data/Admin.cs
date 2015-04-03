@@ -7,6 +7,7 @@
 
     public class Admin : Organizer
     {
+        // TODO: encapsulate and implement
         public int Event { get; set; }
 
         public string Name { get; set; }

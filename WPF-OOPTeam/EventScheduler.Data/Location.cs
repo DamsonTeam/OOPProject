@@ -20,19 +20,19 @@
 
         public struct Coordinates
         {
-            public int X { get; set; }
-            public int Y { get; set; }
+            public decimal Latitude  { get; set; }
+            public decimal Longitude { get; set; }
 
-            public Coordinates(int x, int y) //constructor 
+            public Coordinates(decimal latitude, decimal longitude) //constructor 
                 : this()
             {
-                this.X = x;
-                this.Y = y;
+                this.Latitude = latitude;
+                this.Longitude = longitude;
             }
 
             public override string ToString()
             {
-                return string.Format("X {0}; Y {1}", X, Y);
+                return string.Format("Lat:{0} Long:{1}", this.Latitude, this.Longitude);
             }
         }
     }

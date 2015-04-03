@@ -52,7 +52,7 @@
                 this.dateTime = value;
             }
         }
-
+        // TODO: Should we leave parameterless constructors of Location/Organizer?
         public Location Location
         {
             get
