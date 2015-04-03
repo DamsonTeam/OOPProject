@@ -9,11 +9,21 @@
 
     public class Event
     {
+        private string title;
+        private DateTime dateTime;
+        private Location location;
+        private Organizer organizer;
+        private List<Participant> participantsList;
+        private string meetingPoint;
+        private decimal budget;
+        private List<EventStaff> eventStaff;
+
+
         public string Title
         {
             get
             {
-                return this.Title;
+                return this.title;
             }
             private set
             {
@@ -22,7 +32,7 @@
                     throw new Exception("Event title length must be at least 2 symbols.");
                 }
 
-                this.Title = value;
+                this.title = value;
             }
         }
 
@@ -30,7 +40,7 @@
         {
             get
             {
-                throw new System.NotImplementedException();
+                return this.dateTime;
             }
             private set
             {
@@ -39,7 +49,7 @@
                     throw new Exception("Date must have value.");
                 }
 
-                this.DateTime = value;
+                this.dateTime = value;
             }
         }
 
@@ -47,11 +57,11 @@
         {
             get
             {
-                return this.Location;
+                return this.location;
             }
             private set
             {
-                this.Location = new Location();
+                this.location = new Location();
             }
         }
 
@@ -59,11 +69,11 @@
         {
             get
             {
-                return this.Organizer;
+                return this.organizer;
             }
             private set
             {
-                this.Organizer = new Organizer();
+                this.organizer = new Organizer();
             }
         }
 
@@ -71,11 +81,11 @@
         {
             get
             {
-                return this.ParticipantsList;
+                return this.participantsList;
             }
             private set
             {
-                this.ParticipantsList = new List<Participant>();
+                this.participantsList = new List<Participant>();
             }
         }
 
@@ -83,7 +93,7 @@
         {
             get
             {
-                return this.MeetingPoint;
+                return this.meetingPoint;
             }
             private set
             {
@@ -91,7 +101,7 @@
                 {
                     throw new Exception("Meeting point must be assigned.");
                 }
-                this.MeetingPoint = value;
+                this.meetingPoint = value;
             }
         }
 
@@ -99,7 +109,7 @@
         {
             get
             {
-                return this.Budget;
+                return this.budget;
             }
             private set
             {
@@ -107,7 +117,7 @@
                 {
                     throw new Exception("Budget of the event must be assigned.");
                 }
-                this.Budget = value;
+                this.budget = value;
             }
         }
 
@@ -115,11 +125,11 @@
         {
             get
             {
-                return this.EventStaff;
+                return this.eventStaff;
             }
             private set
             {
-                this.EventStaff = new List<EventStaff>();
+                this.eventStaff = new List<EventStaff>();
             }
         }
 
