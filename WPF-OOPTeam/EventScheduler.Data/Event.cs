@@ -21,6 +21,7 @@
                 {
                     throw new Exception("Event title length must be at least 2 symbols.");
                 }
+
                 this.Title = value;
             }
         }
@@ -37,6 +38,7 @@
                 {
                     throw new Exception("Date must have value.");
                 }
+
                 this.DateTime = value;
             }
         }

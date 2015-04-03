@@ -10,10 +10,12 @@
     {
         private string firstName;
         private string lastName;
+
         public Person()
         {
 
         }
+
         public Person(string firstName, string lastName, Gender sex = Gender.NotSpecified)
         {
             this.FirstName = firstName;
@@ -36,6 +38,7 @@
                 this.firstName = value;
             }
         }
+
         public string LastName
         {
             get
@@ -53,8 +56,7 @@
         }
 
         public Gender Gender { get; private set; }
-
-
+        
         public void RoomDistribuition(Participant person)//  Rooms room
         {
             throw new System.NotImplementedException();
@@ -70,6 +72,4 @@
             throw new NotImplementedException();
         }
     }
-
-
 }

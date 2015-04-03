@@ -1,11 +1,12 @@
 ﻿namespace EventScheduler.Data
 {
-    using Enumerations;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using Interfaces;
+
+    using Enumerations;
 
     public class Organizer : Participant, IParticipant
     {

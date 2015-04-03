@@ -3,15 +3,13 @@
     using Interfaces;
 
     public class Cook : RestaurantStaff, IRequiredStaff
-    {
-        //constructor
-        public Cook(string name, Event eventToJoinn, decimal cost, bool isRequired)
+    {        
+        public Cook(string name, Event eventToJoin, decimal cost, bool isRequired)
         {
             this.Name = name;
-            this.EventToJoin = eventToJoinn;
+            this.EventToJoin = eventToJoin;
             this.Cost = cost;
             this.IsRequiredStaff = isRequired;
-
         }
 
         public override bool IsRequired()

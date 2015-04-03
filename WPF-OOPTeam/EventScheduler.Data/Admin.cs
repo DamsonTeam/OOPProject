@@ -7,22 +7,17 @@
 
     public class Admin : Organizer
     {
+        public int Event { get; set; }
+
+        public string Name { get; set; }
+
         private static string password = "mypass";
+
         public static bool IsCorrect(string s)
         {
             return password == s;
         }
-        public int Event
-        {
-            get;
-            set;
-        }
-        public string Name
-        {
-            get;
-            set;
-        }
-
+        
         public void AddEvent()
         {
             throw new System.NotImplementedException();

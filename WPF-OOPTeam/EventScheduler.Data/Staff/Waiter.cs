@@ -1,11 +1,9 @@
-﻿
-namespace EventScheduler.Data.Staff
+﻿namespace EventScheduler.Data.Staff
 {
     using Interfaces;
 
     public class Waiter : RestaurantStaff, IRequiredStaff
-    {
-        //constructor
+    {        
         public Waiter(string name, Event eventToJoinn, decimal cost, bool isRequired)
         {
             this.Name = name;
@@ -19,6 +17,5 @@ namespace EventScheduler.Data.Staff
         {
             return base.IsRequiredStaff;
         }
-
     }
 }

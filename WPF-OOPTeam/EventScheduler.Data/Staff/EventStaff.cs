@@ -11,7 +11,5 @@
         protected string Name;
         protected Event EventToJoin;
         protected decimal Cost;
-
-
     }
 }

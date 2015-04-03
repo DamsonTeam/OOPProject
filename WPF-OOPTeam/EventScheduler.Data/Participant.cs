@@ -11,6 +11,8 @@
 
     public class Participant : Person, IParticipant, IDriver
     {
+        private static int participantCount = 0;
+
         private bool hasPaid = false;
         private string gsm;
         private Event eventToAttend;
@@ -18,9 +20,7 @@
         private decimal moneyPaid;
         private string email;
         private int seatsAvailable;
-        private static int participantCount = 0;
 
-        //constructor
         public Participant()
         { }
 
@@ -125,6 +125,7 @@
                 {
                     throw new Exception("Invalid e-mail.");
                 }
+
                 this.email = value;
             }
         }
@@ -153,7 +154,7 @@
                 throw new NotImplementedException();
             }
         }
-        //dobaveno Andrej 27.03
+
         public void AddMusicalWish(string wish)
         {
             StreamWriter sw = new StreamWriter("..\\..\\MusicalWishList.txt");

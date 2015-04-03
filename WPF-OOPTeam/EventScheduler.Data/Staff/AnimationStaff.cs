@@ -2,7 +2,7 @@
 {
     using Interfaces;
 
-   public abstract class AnimationStaff : EventStaff, IRequiredStaff
+    public abstract class AnimationStaff : EventStaff, IRequiredStaff
     {
         protected bool IsRequiredStaff = false;
 
