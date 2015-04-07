@@ -7,6 +7,7 @@
 
     public class Location
     {
+
         private Coordinates coordinates;
         private string restaurant;
         public Location(Coordinates coordinates, string restaurant = "NOT SPECIFIED")
