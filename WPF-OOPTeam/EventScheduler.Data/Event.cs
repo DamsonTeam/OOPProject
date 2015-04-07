@@ -28,7 +28,7 @@
             if(title=="NewEvent"){
                 this.title = DateTimeString;
             }
-            this.Comment = string.Concat(this.Comment, DateTimeString);
+            this.comment = string.Concat(this.Comment, DateTimeString);
             
         }
 
@@ -157,7 +157,7 @@
             get { return this.comment; }
             set
             {
-                this.comment = value;
+                this.comment = String.Format("{0}\n{1}", this.comment, value);
             }
         }
 

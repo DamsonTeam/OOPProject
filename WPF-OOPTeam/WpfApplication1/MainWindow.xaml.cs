@@ -198,7 +198,7 @@ namespace WpfApplication1
             // eventsList.Add(eventThree);
             // eventsList.Add(eventFour);
             // eventsList.Add(eventFive);
-
+            //SerializeEvent.SerializeEventList(eventsList, "AllEvents.bin");
 
             List<Event> returnedList = SerializeEvent.DeserializeEventList("AllEvents.bin");
             eventsList = returnedList;
