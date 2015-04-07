@@ -1,10 +1,6 @@
-﻿namespace EventScheduler.Data.Staff
+﻿namespace EventScheduler.Data.Staff.StaffAbstraction
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using Interfaces;
 
     [Serializable]
     public abstract class EventStaff : Person

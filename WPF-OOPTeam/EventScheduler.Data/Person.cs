@@ -1,13 +1,14 @@
 ﻿namespace EventScheduler.Data
 {
-    using Enumerations;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
+    using Enumerations;
+
     [Serializable]
     public abstract class Person
     {
+        private const int MinimumPersonAge = 15;
+        private const int MaximumPersonAge = 50;
+
         private string firstName;
         private string lastName;
         private int age;
@@ -17,7 +18,7 @@
 
         }
 
-        public Person(string firstName, string lastName,int age, Gender sex = Gender.NotSpecified)
+        public Person(string firstName, string lastName, int age, Gender sex = Gender.NotSpecified)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -37,6 +38,7 @@
                 {
                     throw new Exception("Name length must be greater than 2.");
                 }
+
                 this.firstName = value;
             }
         }
@@ -53,24 +55,28 @@
                 {
                     throw new Exception("Name length must be greater than 2.");
                 }
+
                 this.lastName = value;
             }
         }
 
         public int Age
         {
-            get { return this.age; }
+            get
+            {
+                return this.age;
+            }
             protected set
             {
-                if (value<15 || value>50)
+                if (value < 15 || value > 50)
                 {
-                    throw new Exception("Age must be between 15 and 50.");
+                    throw new Exception(string.Format("Age must be between {0} and {1} years.", MinimumPersonAge, MaximumPersonAge));
                 }
+
                 this.age = value;
             }
         }
 
         public Gender Gender { get; private set; }
-      
     }
 }

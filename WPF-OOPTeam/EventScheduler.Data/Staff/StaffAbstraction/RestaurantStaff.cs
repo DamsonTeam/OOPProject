@@ -1,4 +1,4 @@
-﻿namespace EventScheduler.Data.Staff
+﻿namespace EventScheduler.Data.Staff.StaffAbstraction
 {
     using Interfaces;
 

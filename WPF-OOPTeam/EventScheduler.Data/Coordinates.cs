@@ -1,14 +1,12 @@
-﻿
-
-namespace EventScheduler.Data
-{
-    
+﻿namespace EventScheduler.Data
+{    
     using System;
-    [Serializable]
 
+    [Serializable]
     public struct Coordinates
     {
         public decimal Latitude { get; set; }
+
         public decimal Longitude { get; set; }
 
         public Coordinates(decimal latitude, decimal longitude) //constructor 
