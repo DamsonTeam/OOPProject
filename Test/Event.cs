@@ -25,7 +25,7 @@
             }
         }
 
-        public int Location
+        public Location EventLocation
         {
             get
             {
@@ -36,7 +36,7 @@
             }
         }
 
-        public int Organizer
+        public Organizer bigBoss
         {
             get
             {
@@ -58,7 +58,7 @@
             }
         }
 
-        public int MeetingPoint
+        public Location MeetingPoint
         {
             get
             {
@@ -69,7 +69,7 @@
             }
         }
 
-        public int Budget
+        public decimal Budget
         {
             get
             {
