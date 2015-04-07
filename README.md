@@ -15,9 +15,40 @@
 	o	tsetsin ( Цветан Цонев )
 
 	•	PROJECT EXPLANATION
-	The application is used to organize events. 
+	The project presents a console application for organizing events written in C# programming language. 
+
+	Users:
+	Administrators – they can manage all the data available in the application
+	Organizers – they can change the meeting points and confirm if a participant has paid the required fee.
+	Participants – they can add their names in the list of participants and information about if they use private 	transport and the number of seats available.
+	*The administrators and the organizers can login using a special login form. The participants can add their names and other necessary information about them in the event data without the need to login. 
 	
+	Event data:
+	Name – the name of the event
+	Date – date and time when the event begins
+	Location – GPS coordinates (latitude and longitude) of the place with the name of the venue (optional).
+	Organizer – the name of the organizer of the event
+	List of participants – all participants attending the event
+	Staff list – list of the staff in charge of organizing the event
+	Meting point – the place where all the participants depart
+	Budget – the total amount of money needed
 	
+	Staff data:
+	
+					Event staff
+						/	\
+		Animation staff		Restaurant staff
+			/	\				/	\
+			DJ	Singer		Cook	Waiter
+	
+	Event staff – all the people in charge of organizing the event
+	Animation staff – the staff responsible for animating the event
+	Restaurant staff – the staff responsible for the food and catering
+	DJ – Disco Joker
+	Singer – singer and/or musicians
+	Cook – chef and kitchen staff
+	Waiter – serving personnel
+
 
 	•	URL OF GIT REPOSITORY
 	

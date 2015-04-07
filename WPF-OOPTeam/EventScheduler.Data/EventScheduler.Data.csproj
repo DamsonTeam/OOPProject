@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Coordinates.cs" />
+    <Compile Include="Exceptions\ErrorMessages.cs" />
+    <Compile Include="Exceptions\Validator.cs" />
     <Compile Include="Staff\StaffAbstraction\AnimationStaff.cs" />
     <Compile Include="Staff\Cook.cs" />
     <Compile Include="Staff\DJ.cs" />
@@ -59,9 +61,6 @@
     <Compile Include="Staff\Singer.cs" />
     <Compile Include="Staff\Waiter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
