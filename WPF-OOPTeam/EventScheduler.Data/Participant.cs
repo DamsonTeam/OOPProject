@@ -8,6 +8,7 @@
     using System.Threading.Tasks;
 
     using Interfaces;
+using EventScheduler.Data.Enumerations;
 
     public class Participant : Person, IParticipant, IDriver
     {
@@ -24,16 +25,18 @@
         public Participant()
         { }
 
-        public Participant(string firstName, string lastName, Event eventToJoin, string email, string gsm, decimal moneyPaid)
+        public Participant(string firstName, string lastName,Gender gender, Event eventToJoin, string email, string gsm, decimal moneyPaid)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
+            this.ParticipantGender = gender;
             this.EventToOrganize = eventToJoin;
             this.EMail = email;
             this.GSM = gsm;
             this.MoneyPaid = moneyPaid;
             ++participantCount;
         }
+        public Gender ParticipantGender { get; private set; }
 
         public bool IsParticipant
         {
@@ -49,7 +52,7 @@
             }
             private set
             {
-                this.eventToAttend = new Event();
+                this.eventToAttend = value;
             }
         }
         public int SeatsAvailable

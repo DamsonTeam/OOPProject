@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using EventScheduler.Data;
 using EventScheduler.Data.Staff;
+using EventScheduler.Data.Enumerations;
 
 namespace WpfApplication1
 {
@@ -26,7 +27,7 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         public List<Event> eventsList;
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -44,6 +45,8 @@ namespace WpfApplication1
             
             MyDataGrid.ItemsSource = colllect;*/
 
+            var rnd = new Random();
+
             var eventOne = new Event();
             var eventTwo = new Event();
             var eventThree = new Event();
@@ -53,45 +56,50 @@ namespace WpfApplication1
             #region enventMakeing
             eventOne.Budget = 1205.00m;
             eventOne.DateTime = DateTime.Parse("01.12.2015 20:00:00");
-            eventOne.EventStaff = new List < EventStaff>(){ new DJ("MC Grozen", eventOne, 200),new Cook("Bai Ivan",eventOne,50,true)};
-            eventOne.Location = new Location(new Coordinates(40.25m, 10.12m),"Limoncheto");
+            eventOne.EventStaff = new List<EventStaff>() { new DJ("MC Grozen", eventOne, 200), new Cook("Bai Ivan", eventOne, 50, true) };
+            eventOne.Location = new Location(new Coordinates(40.25m, 10.12m), "Limoncheto");
             eventOne.MeetingPoint = "Pazara";
             eventOne.Organizer = new Organizer("Ivailo", "Kenov", EventScheduler.Data.Enumerations.Gender.Male, eventOne, "i_k@abv.bg", "+359 888 888 888", 1300);
             eventOne.ParticipantsList = new List<Participant>();
+
+            eventOne.Title = "Naj ludoto party ever";
             for (int i = 0; i < 20; i++)
             {
+                var gender = rnd.Next(0, 3);
                 eventOne.ParticipantsList.Add(
-                    new Participant("Participant" + (i + 1).ToString(), "LastName" + (i + 1).ToString(), eventOne,
+                    new Participant("Participant" + (i + 1).ToString(), "LastName" + (i + 1).ToString(),(Gender)gender, eventOne,
                         "p" + (i + 1).ToString() + "@gmail.com", "0888 888 8" + (i + 1).ToString(), 25));
             }
-            eventOne.Title = "Naj ludoto party ever";
+
 
             eventTwo.Budget = 6500.00m;
             eventTwo.DateTime = DateTime.Parse("08.12.2015 22:00:00");
-            eventTwo.EventStaff = new List<EventStaff>() { new DJ("MC Typ", eventTwo, 200),new Singer("Analiq",eventTwo,5000,true) , new Cook("Bai Ivan", eventTwo, 50, true) };
+            eventTwo.EventStaff = new List<EventStaff>() { new DJ("MC Typ", eventTwo, 200), new Singer("Analiq", eventTwo, 5000, true), new Cook("Bai Ivan", eventTwo, 50, true) };
             eventTwo.Location = new Location(new Coordinates(80.25m, 120.12m), "Riblja Corba");
             eventTwo.MeetingPoint = "NDK";
             eventTwo.Organizer = new Organizer("Doncho", "Minkov", EventScheduler.Data.Enumerations.Gender.Male, eventTwo, "D_M@abv.bg", "+359 888 888 666", 6500);
             eventTwo.ParticipantsList = new List<Participant>();
             for (int i = 0; i < 20; i++)
             {
+                var gender = rnd.Next(0, 3);
                 eventTwo.ParticipantsList.Add(
-                    new Participant("Participant" + (i + 21).ToString(), "LastName" + (i + 21).ToString(), eventTwo,
+                    new Participant("Participant" + (i + 21).ToString(), "LastName" + (i + 21).ToString(), (Gender)gender, eventTwo,
                         "p" + (i + 21).ToString() + "@gmail.com", "0888 888 8" + (i + 21).ToString(), 25));
             }
             eventTwo.Title = "Narko party";
 
             eventThree.Budget = 26500.00m;
             eventThree.DateTime = DateTime.Parse("31.12.2015 22:00:00");
-            eventThree.EventStaff = new List<EventStaff>() {  new Singer("Jochan Strauss JR", eventThree, 25000, true)};
+            eventThree.EventStaff = new List<EventStaff>() { new Singer("Jochan Strauss JR", eventThree, 25000, true) };
             eventThree.Location = new Location(new Coordinates(54.25m, 50.12m), "NDK");
             eventThree.MeetingPoint = "NDK";
             eventThree.Organizer = new Organizer("Evlogi", "Georgiev", EventScheduler.Data.Enumerations.Gender.Male, eventThree, "EG@abv.bg", "+359 888 888 686", 26500);
             eventThree.ParticipantsList = new List<Participant>();
             for (int i = 0; i < 20; i++)
             {
+                var gender = rnd.Next(0, 3);
                 eventThree.ParticipantsList.Add(
-                    new Participant("Participant" + (i + 321).ToString(), "LastName" + (i + 321).ToString(), eventThree,
+                    new Participant("Participant" + (i + 321).ToString(), "LastName" + (i + 321).ToString(), (Gender)gender, eventThree,
                         "p" + (i + 321).ToString() + "@gmail.com", "0888 888 8" + (i + 321).ToString(), 125));
             }
             eventThree.Title = "Forever Classics";
@@ -104,21 +112,22 @@ namespace WpfApplication1
             eventFour.ParticipantsList = new List<Participant>();
             for (int i = 0; i < 20; i++)
             {
+                var gender = rnd.Next(0, 3);
                 eventFour.ParticipantsList.Add(
-                    new Participant("Participant" + (i + 4321).ToString(), "LastName" + (i + 4321).ToString(), eventFour,
+                    new Participant("Participant" + (i + 4321).ToString(), "LastName" + (i + 4321).ToString(), (Gender)gender, eventFour,
                         "p" + (i + 4321).ToString() + "@gmail.com", "0888 888 8" + (i + 4321).ToString(), 0));
             }
             eventFour.Title = "Pijama party";
             #endregion
-             eventsList = new List<Event> { eventOne, eventTwo, eventThree, eventFour, eventFive };
-           // eventsList.Add(eventOne);
-           // eventsList.Add(eventTwo);
-           // eventsList.Add(eventThree);
-           // eventsList.Add(eventFour);
-           // eventsList.Add(eventFive);
+            eventsList = new List<Event> { eventOne, eventTwo, eventThree, eventFour, eventFive };
+            // eventsList.Add(eventOne);
+            // eventsList.Add(eventTwo);
+            // eventsList.Add(eventThree);
+            // eventsList.Add(eventFour);
+            // eventsList.Add(eventFive);
             MyComboBox.ItemsSource = eventsList;
         }
-        
+
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
             Login form = new Login();
