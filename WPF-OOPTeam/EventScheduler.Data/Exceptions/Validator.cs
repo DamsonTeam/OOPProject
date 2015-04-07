@@ -21,7 +21,7 @@
             }
         }
 
-        public static void CheckIfLengthIsValid(string text, int min = 0, int max, string message = null)
+        public static void CheckIfLengthIsValid(string text, int max, int min = 0, string message = null)
         {
             if (text.Length < min || max < text.Length)
             {
