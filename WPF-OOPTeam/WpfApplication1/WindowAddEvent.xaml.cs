@@ -31,6 +31,7 @@ namespace WpfApplication1
             NewLocationY.Tag = false;
             NewMoneyNeed.Tag = false;
             NewTitle.Tag = false;
+           
         }
         public static void ShowME()
         {
@@ -126,7 +127,11 @@ namespace WpfApplication1
             var x = Convert.ToDecimal(NewLocationX.Text);
             var y = Convert.ToDecimal(NewLocationY.Text);
             Location loc = new Location(new Coordinates(x, y));
-            Event currentEv = new Event() { Title = NewTitle.Text, Budget = money, Location = loc, MeetingPoint = NewMeetingPoint.Text, DateTime = date };
+            Event currentEv = new Event() { Title = NewTitle.Text, Budget = money, Location = loc, MeetingPoint = NewMeetingPoint.Text, DateTime = date};
+            if (!string.IsNullOrEmpty(NewCommentBox.Text))
+            {
+                currentEv.Comment = NewCommentBox.Text;
+            }
             foreach (Window item in Application.Current.Windows)
             {
                 if (item.GetType() == typeof(MainWindow))

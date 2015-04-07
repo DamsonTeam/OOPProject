@@ -204,8 +204,8 @@ namespace WpfApplication1
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
             Login form = new Login();
-            form.Show();
-            ButtonLogin.IsEnabled = false;
+            form.ShowDialog();//.Show();
+            //ButtonLogin.IsEnabled = false;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -217,6 +217,8 @@ namespace WpfApplication1
                 return;
             }
             var list = eventsList[index].ParticipantsList;
+            var comment = eventsList[index].Comment;
+            this.MyTextBlock.Text = comment;
             this.MyDataGrid.ItemsSource = list;
         }
 
