@@ -7,6 +7,8 @@
 
     public class Location
     {
+
+        // TODO: why is restaurant here?
         public int Restaurant
         {
             get
@@ -18,6 +20,7 @@
             }
         }
 
+        // TODO: Should we keep this within a class? 
         public struct Coordinates
         {
             public decimal Latitude  { get; set; }
