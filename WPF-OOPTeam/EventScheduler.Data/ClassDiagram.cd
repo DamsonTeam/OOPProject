@@ -1,5 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Classes.Person">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABAAACAAAAAACAAAAAAAAEAAABACAAAAAg=</HashCode>
+      <FileName>Classes\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Classes.Participant">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAQAAAAEIAQAYgAACEAAAIAGAACAQAAAABAAAAAQA=</HashCode>
+      <FileName>Classes\Participant.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Classes.EventStaff">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Classes\EventStaff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Classes.Organizer">
     <Position X="0.5" Y="10" Width="1.5" />
     <TypeIdentifier>
@@ -15,6 +37,89 @@
       <FileName>Classes\Admin.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Classes.Event">
+    <Position X="13.25" Y="6.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Classes.Event.Status" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Classes\Event.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAEAEAAIACAAAAAAMAAQAAAAAAAAAgAA=</HashCode>
+      <FileName>Classes\Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Classes.Location">
+    <Position X="11.25" Y="6.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="Classes.Location.Coordinates" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Location.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Location.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Classes.RestaurantStaff">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Classes\RestaurantStaff.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Classes.AnimationStaff" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Classes\AnimationStaff.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Classes.Waiter" Collapsed="true">
+    <Position X="5.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Waiter.cs</FileName>
+      <NewMemberFileName>Classes\Cook.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Classes.DJ" Collapsed="true">
+    <Position X="9" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\DJ.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Classes.Singer" Collapsed="true">
+    <Position X="6.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Singer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Classes.Cook" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cook.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Class Name="EventScheduler.Data.Admin" Collapsed="true">
     <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
@@ -25,21 +130,21 @@
   <Class Name="EventScheduler.Data.Event" Collapsed="true">
     <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAQABAAEAMAAIACAACBAAMAAUADADAAAAAgAA=</HashCode>
+      <HashCode>AAAAAEAAQABAAEAMAAIACAACBAAMAAQADACAAAAAgAA=</HashCode>
       <FileName>Event.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EventScheduler.Data.Location" Collapsed="true">
     <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAACAAAAAAAAAEAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Location.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EventScheduler.Data.Organizer" Collapsed="true">
     <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAABAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAABAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organizer.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -47,7 +152,7 @@
   <Class Name="EventScheduler.Data.Participant" Collapsed="true">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAQAAAAEIAQAYgAACGAAAIAGAACAQAAAABAAAAAQA=</HashCode>
+      <HashCode>AQAAQAAAAEIAQAYgAACEAAAIAGAACAQAAAABAAAAAQA=</HashCode>
       <FileName>Participant.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -55,7 +160,7 @@
   <Class Name="EventScheduler.Data.Person" Collapsed="true">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAABAAACAAAAAACAAAAAAAAAAAAAACAAAAAg=</HashCode>
+      <HashCode>AAAAAEAAAABAAACAAAAAACAAAAAAAAEAAABACAAAAAg=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -63,7 +168,7 @@
     <Position X="8.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACAAAAA=</HashCode>
-      <FileName>Staff\StaffAbstraction\AnimationStaff.cs</FileName>
+      <FileName>Staff\AnimationStaff.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -87,14 +192,14 @@
     <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAIAAAAAAAA=</HashCode>
-      <FileName>Staff\StaffAbstraction\EventStaff.cs</FileName>
+      <FileName>Staff\EventStaff.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EventScheduler.Data.Staff.RestaurantStaff" Collapsed="true">
     <Position X="4" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACAAAAA=</HashCode>
-      <FileName>Staff\StaffAbstraction\RestaurantStaff.cs</FileName>
+      <FileName>Staff\RestaurantStaff.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -114,10 +219,31 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Interface Name="Classes.Interfaces.IDriver">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Interfaces\IDriver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Classes.Interfaces.IParticipant">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Interfaces\IParticipant.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Classes.Interfaces.IRequiredStaff">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Interfaces\IRequiredStaff.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Interface Name="EventScheduler.Data.Interfaces.IDriver" Collapsed="true">
     <Position X="12" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQBAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IDriver.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -135,6 +261,20 @@
       <FileName>Interfaces\IRequiredStaff.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Enum Name="Classes.PaymentMethod">
+    <Position X="11.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAABABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\PaymentMethod.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Classes.Enumerations.Gender">
+    <Position X="13" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Classes\Enumerations\Gender.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Enum Name="EventScheduler.Data.Enumerations.Gender" Collapsed="true">
     <Position X="12" Y="3.5" Width="1.5" />
     <TypeIdentifier>

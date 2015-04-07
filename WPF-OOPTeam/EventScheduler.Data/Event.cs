@@ -6,13 +6,9 @@
     using System.Text;
     
     using EventScheduler.Data.Staff;
-using EventScheduler.Data.Interfaces;
-    using EventScheduler.Data.Exceptions;
 
     public class Event
     {
-        public const int EventTitleLenghtMinValue = 2;
-
         private string title;
         private DateTime dateTime;
         private Location location;
@@ -31,12 +27,10 @@ using EventScheduler.Data.Interfaces;
             }
              set
             {
-                //if (string.IsNullOrEmpty(value) || value.Length < 2)
-                //{
-                //    throw new Exception("Event title length must be at least 2 symbols.");
-                //}
-                Validator.CheckIfNullOrEmpty(value, string.Format(ErrorMessages.NullOrEmpty, "Event title"));
-                Validator.CheckIfLengthIsAtLeastNSymbols(value, EventTitleLenghtMinValue, string.Format(ErrorMessages.LengthAtLeast, "Event title", EventTitleLenghtMinValue));
+                if (string.IsNullOrEmpty(value) || value.Length < 2)
+                {
+                    throw new Exception("Event title length must be at least 2 symbols.");
+                }
 
                 this.title = value;
             }
@@ -103,11 +97,10 @@ using EventScheduler.Data.Interfaces;
             }
              set
             {
-                //if (string.IsNullOrEmpty(value))
-                //{
-                //    throw new Exception("Meeting point must be assigned.");
-                //}
-                Validator.CheckIfNullOrEmpty(value, string.Format(ErrorMessages.NullOrEmpty, "Meeting point"));
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Meeting point must be assigned.");
+                }
                 this.meetingPoint = value;
             }
         }
@@ -124,7 +117,6 @@ using EventScheduler.Data.Interfaces;
                 {
                     throw new Exception("Budget of the event must be assigned.");
                 }
-
                 this.budget = value;
             }
         }
@@ -144,27 +136,6 @@ using EventScheduler.Data.Interfaces;
         public enum Status
         {
             Active, Cancelled, Past
-        }
-
-        public void RoomDistribuition(Participant person)//  Rooms room
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void CarDistribution(string driverGSM, int seatsAvailable)
-        {
-            //var passangersInCars = new Dictionary<string, List<Participant>>();
-            //var passangers = new List<Participant>();
-            //foreach (var driverAvailable in participantsList.Where(x=>x.IsDriver==true).Where(x=>x.SeatsAvailable>0))
-            //{
-            //    for (int i = 0; i < seatsAvailable; i++)
-            //    {
-            //       throw new NotImplementedException();
-            //    }
-            //   // passangersInCars.Add(driverAvailable.GSM, );
-            //}
-
-
         }
 
         public override string ToString()

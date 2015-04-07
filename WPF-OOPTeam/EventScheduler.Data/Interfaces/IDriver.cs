@@ -5,7 +5,5 @@
         int SeatsAvailable { get; set; }
 
         string MeetPoint { get; set; }
-
-        bool IsDriver { get; set; }
     }
 }
