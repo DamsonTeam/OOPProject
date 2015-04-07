@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Coordinates.cs" />
+    <Compile Include="Enumerations\Status.cs" />
     <Compile Include="Exceptions\ErrorMessages.cs" />
     <Compile Include="Exceptions\Validator.cs" />
     <Compile Include="SerializeEvent.cs" />

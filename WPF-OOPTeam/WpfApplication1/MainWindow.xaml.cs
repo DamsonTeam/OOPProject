@@ -28,6 +28,7 @@ using System.Runtime.Serialization;
 namespace WpfApplication1
 {
     using EventScheduler.Data;
+    using EventScheduler.Data.Staff.StaffAbstraction;
 
 
     /// <summary>

@@ -3,10 +3,10 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
 
-    using EventScheduler.Data.Staff;
+    using EventScheduler.Data.Enumerations;
     using EventScheduler.Data.Exceptions;
+    using EventScheduler.Data.Staff.StaffAbstraction;
 
     [Serializable()]
     public class Event
@@ -22,21 +22,19 @@
         private decimal budget;
         private List<EventStaff> eventStaff;
         private string comment;
-
+        private EventStatus eventStatus;
 
         public Event(string title = "NewEvent")
         {
-
             string DateTimeString = String.Format("EventCreated{0}{1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
 
             if (title == "NewEvent")
             {
                 this.title = DateTimeString;
             }
+
             this.comment = string.Concat(this.Comment, DateTimeString);
-
         }
-
 
         public string Title
         {
@@ -52,7 +50,6 @@
                 //}
                 Validator.CheckIfNullOrEmpty(value, string.Format(ErrorMessages.NullOrEmpty, "Event title"));
                 Validator.CheckIfLengthIsAtLeastNSymbols(value, EventTitleLenghtMinValue, string.Format(ErrorMessages.LengthAtLeast, "Event title", EventTitleLenghtMinValue));
-
 
                 this.title = value;
             }
@@ -74,6 +71,7 @@
                 this.dateTime = value;
             }
         }
+
         // TODO: Should we leave parameterless constructors of Location/Organizer?
         public Location Location
         {
@@ -123,6 +121,7 @@
                 {
                     throw new Exception("Meeting point must be assigned.");
                 }
+
                 this.meetingPoint = value;
             }
         }
@@ -139,6 +138,7 @@
                 {
                     throw new Exception("Budget of the event must be assigned.");
                 }
+
                 this.budget = value;
             }
         }
@@ -155,17 +155,27 @@
             }
         }
 
-        public enum Status
-        {
-            Active, Cancelled, Past
-        }
-
         public string Comment
         {
-            get { return this.comment; }
+            get
+            {
+                return this.comment;
+            }
             set
             {
                 this.comment = String.Format("{0}\n{1}", this.comment, value);
+            }
+        }
+        
+        public EventStatus EventStatus
+        {
+            get
+            {
+                return this.eventStatus;
+            }
+            set
+            {
+                this.eventStatus = value;
             }
         }
 
@@ -183,21 +193,20 @@
 
             var participantsInCars = new Dictionary<string, string>();
 
-           var participantsToDistribute = participantsList.Where(x=>x.IsDriver==false);
+            var participantsToDistribute = participantsList.Where(x => x.IsDriver == false);
 
-            var participantsDrivers = participantsList.Where(x=>x.IsDriver==true);
-           
+            var participantsDrivers = participantsList.Where(x => x.IsDriver == true);
+
             foreach (var driver in participantsDrivers)
             {
                 for (int j = 0; j < participantsToDistribute.Count(); j++)
-			        {
-			        for (int i = 0; i < driver.SeatsAvailable; i++)
-                        {
-                            participantsInCars.Add(driver.GSM, participantsToDistribute.ElementAt(j).GSM);
-                        }
-			        }
+                {
+                    for (int i = 0; i < driver.SeatsAvailable; i++)
+                    {
+                        participantsInCars.Add(driver.GSM, participantsToDistribute.ElementAt(j).GSM);
+                    }
+                }
             }
         }
-
     }
 }

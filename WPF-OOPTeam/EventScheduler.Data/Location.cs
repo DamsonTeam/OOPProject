@@ -1,12 +1,7 @@
 ﻿namespace EventScheduler.Data
 {
-    using EventScheduler.Data;
-    using EventScheduler.Data.Exceptions;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-
+    using EventScheduler.Data.Exceptions;
 
     [Serializable]
     public class Location
@@ -16,11 +11,13 @@
         
         private Coordinates coordinates;
         private string restaurant;
+
         public Location(Coordinates coordinates, string restaurant = "NOT SPECIFIED")
         {
             this.coordinates = coordinates;
             this.Restaurant = restaurant;
         }
+
         public string Restaurant
         {
             get
@@ -38,8 +35,7 @@
 
             }
         }
-
-        
+                
         public override string ToString()
         {
             return this.coordinates.ToString();

@@ -1,14 +1,12 @@
 ﻿namespace EventScheduler.Data
 {
     using System;
-    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
-    using Interfaces;
     using EventScheduler.Data.Enumerations;
+    using Interfaces;
+
     [Serializable]
     public class Participant : Person, IParticipant, IDriver
     {
@@ -24,25 +22,22 @@
         private bool isDriver;
 
         public Participant()
-        { }
+        {
+        }
 
-        public Participant(string firstName, string lastName, Gender gender, string email, string gsm, decimal moneyPaid, int age, bool isDriver=false)
-            : base(firstName, lastName, age,gender)
+        public Participant(string firstName, string lastName, Gender gender, string email, string gsm, decimal moneyPaid, int age, bool isDriver = false)
+            : base(firstName, lastName, age, gender)
         {
             this.ParticipantGender = gender;
             this.EMail = email;
             this.GSM = gsm;
             this.MoneyPaid = moneyPaid;
             this.IsDriver = isDriver;
-
         }
+
         public Gender ParticipantGender { get; private set; }
 
-        public bool IsParticipant
-        {
-            get;
-            private set;
-        }
+        public bool IsParticipant { get; private set; }
 
         public bool IsDriver
         {
@@ -73,17 +68,23 @@
                 {
                     throw new Exception("Seats available must be greater than 0.");
                 }
+
                 this.seatsAvailable = value;
             }
         }
+
         public string MeetPoint
         {
-            get {return this.meetPoint;}
+            get
+            {
+                return this.meetPoint;
+            }
             set
             {
                 this.meetPoint = value;
             }
         }
+
         public bool HasPaid
         {
             get
@@ -95,6 +96,7 @@
                 this.hasPaid = value;
             }
         }
+
         public string GSM
         {
             get
@@ -110,6 +112,7 @@
                 this.gsm = value;
             }
         }
+
         public decimal MoneyPaid
         {
             get
@@ -122,9 +125,11 @@
                 {
                     throw new Exception("Money paid must be greater than 0.");
                 }
+
                 this.moneyPaid = value;
             }
         }
+
         public string EMail
         {
             get
@@ -155,7 +160,6 @@
             }
         }
 
-
         public void AddMusicalWish(string wish)
         {
             StreamWriter sw = new StreamWriter("..\\..\\MusicalWishList.txt");
@@ -164,6 +168,5 @@
                 sw.WriteLine(wish);
             }
         }
-
     }
 }

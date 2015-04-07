@@ -1,6 +1,7 @@
 ﻿namespace EventScheduler.Data.Staff
 {
     using Interfaces;
+    using StaffAbstraction;
 
     public class DJ : AnimationStaff, IRequiredStaff
     {       

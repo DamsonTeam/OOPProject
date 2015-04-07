@@ -1,6 +1,7 @@
 ﻿namespace EventScheduler.Data.Staff
 {
     using Interfaces;
+    using StaffAbstraction;
 
     public class Waiter : RestaurantStaff, IRequiredStaff
     {        
@@ -10,7 +11,6 @@
             this.EventToJoin = eventToJoinn;
             this.Cost = cost;
             this.IsRequiredStaff = isRequired;
-
         }
 
         public override bool IsRequired()

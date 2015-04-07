@@ -1,12 +1,8 @@
 ﻿namespace EventScheduler.Data
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
     [Serializable]
-
     public class Admin : Organizer
     {
         // TODO: encapsulate and implement

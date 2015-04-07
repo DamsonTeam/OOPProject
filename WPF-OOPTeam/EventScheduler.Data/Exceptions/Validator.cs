@@ -2,7 +2,7 @@
 {
     using System;
 
-    class Validator
+    public class Validator
     {
         public static void CheckIfObjectIsNull(object obj, string message = null)
         {
@@ -35,6 +35,5 @@
                 throw new ArgumentOutOfRangeException(message);
            }
         }
-
     }
 }

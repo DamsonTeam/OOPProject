@@ -1,32 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-//using System.Runtime.Serialization.Formatters.Soap;
-using System.Runtime.Serialization;
-
-
-
-namespace EventScheduler.Data
+﻿namespace EventScheduler.Data
 {
+    using System.Collections.Generic;
+    using System.IO;
+    //using System.Runtime.Serialization.Formatters.Soap;
+    using System.Runtime.Serialization;
+    using System.Runtime.Serialization.Formatters.Binary;
+    
     public static class SerializeEvent
     {
         public static void SerializeEventType(Event t, string fileName)
         {
             // Create an instance of the type and serialize it.
-    
+
             IFormatter formatter = new BinaryFormatter();
             //SerializeEvent.SerializeEventType(eventOne, "EventOne", formatter);
             FileStream s = new FileStream(fileName, FileMode.Create);
             formatter.Serialize(s, t);
             s.Close();
-
         }
-    
-    
+
         public static Event DeserializeEvent(string fileName)
         {
             IFormatter formatter = new BinaryFormatter();
@@ -35,10 +27,8 @@ namespace EventScheduler.Data
             return t;
         }
 
-
         public static void SerializeEventList(List<Event> ListOfEvents, string FileName)
         {
-
             try
             {
                 using (Stream stream = File.Open(FileName, FileMode.Create))
@@ -51,7 +41,6 @@ namespace EventScheduler.Data
             {
             }
         }
-
 
         public static List<Event> DeserializeEventList(string FileName)
         {
@@ -70,12 +59,5 @@ namespace EventScheduler.Data
                 return new List<Event>();
             }
         }
-
-
-
-
-
-
-
     }
 }
