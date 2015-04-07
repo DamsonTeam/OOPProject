@@ -33,8 +33,6 @@
                 Validator.CheckIfLengthIsValid(value, MaxRestaurantNameeLength, MinRestaurantNameLength, string.Format(ErrorMessages.Length, "Restaurant name", MinRestaurantNameLength, MaxRestaurantNameeLength));
                 this.restaurant = value;
 
-                this.restaurant = value;
-
             }
         }
 
