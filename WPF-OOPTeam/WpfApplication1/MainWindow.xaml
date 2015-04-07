@@ -37,7 +37,7 @@
         </ComboBox>
         <TextBlock x:Name="MyTextBlock" HorizontalAlignment="Left" Margin="31,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="215"><Run Text="Event Info"/></TextBlock>
         <Button Style="{StaticResource MyStyle}" x:Name="ButtonLogin" Content="Login" HorizontalAlignment="Left" Margin="46,106,0,0" VerticalAlignment="Top" Width="75" Click="ButtonLogin_Click"/>
-        <Button Style="{StaticResource MyStyle}" x:FieldModifier="public" x:Name="AddButtoin" Content="Add Participant" HorizontalAlignment="Left" Margin="31,187,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.48,0.5" Height="47"/>
+        <Button Style="{StaticResource MyStyle}" x:FieldModifier="public" x:Name="AddButtoin" Content="Add Participant" HorizontalAlignment="Left" Margin="31,187,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.48,0.5" Height="47" Click="AddButtoin_Click"/>
         <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,273,0,0" Height="63" Width="136" Text="Login to activate this button" Padding="5,2,2,2"/>
         <Button x:Name="AddEvent" Style="{StaticResource MyStyle}" IsEnabled="False" Content="Add event" HorizontalAlignment="Left" Margin="31,239,0,0" VerticalAlignment="Top" Width="136" Height="29" Click="AddEvent_Click"/>
 

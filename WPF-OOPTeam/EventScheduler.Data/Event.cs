@@ -1,15 +1,18 @@
 ﻿namespace EventScheduler.Data
-{    
+{
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    
+
     using EventScheduler.Data.Staff;
+    using EventScheduler.Data.Exceptions;
 
     [Serializable()]
-    public class Event 
+    public class Event
     {
+        public const int EventTitleLenghtMinValue = 2;
+
         private string title;
         private DateTime dateTime;
         private Location location;
@@ -21,15 +24,17 @@
         private string comment;
 
 
-        public Event(string title = "NewEvent"){
+        public Event(string title = "NewEvent")
+        {
 
-            string DateTimeString =String.Format("EventCreated{0}{1}",DateTime.Now.ToShortDateString(),DateTime.Now.ToShortTimeString());
+            string DateTimeString = String.Format("EventCreated{0}{1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
 
-            if(title=="NewEvent"){
+            if (title == "NewEvent")
+            {
                 this.title = DateTimeString;
             }
             this.comment = string.Concat(this.Comment, DateTimeString);
-            
+
         }
 
 
@@ -39,12 +44,15 @@
             {
                 return this.title;
             }
-             set
+            set
             {
-                if (string.IsNullOrEmpty(value) || value.Length < 2)
-                {
-                    throw new Exception("Event title length must be at least 2 symbols.");
-                }
+                //if (string.IsNullOrEmpty(value) || value.Length < 2)
+                //{
+                //    throw new Exception("Event title length must be at least 2 symbols.");
+                //}
+                Validator.CheckIfNullOrEmpty(value, string.Format(ErrorMessages.NullOrEmpty, "Event title"));
+                Validator.CheckIfLengthIsAtLeastNSymbols(value, EventTitleLenghtMinValue, string.Format(ErrorMessages.LengthAtLeast, "Event title", EventTitleLenghtMinValue));
+
 
                 this.title = value;
             }
@@ -56,7 +64,7 @@
             {
                 return this.dateTime;
             }
-             set
+            set
             {
                 if (value == default(DateTime))
                 {
@@ -73,7 +81,7 @@
             {
                 return this.location;
             }
-             set
+            set
             {
                 this.location = value;
             }
@@ -85,7 +93,7 @@
             {
                 return this.organizer;
             }
-             set
+            set
             {
                 this.organizer = value;
             }
@@ -97,7 +105,7 @@
             {
                 return this.participantsList;
             }
-             set
+            set
             {
                 this.participantsList = new List<Participant>();
             }
@@ -109,7 +117,7 @@
             {
                 return this.meetingPoint;
             }
-             set
+            set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -125,7 +133,7 @@
             {
                 return this.budget;
             }
-             set
+            set
             {
                 if (value < 0)
                 {
@@ -141,7 +149,7 @@
             {
                 return this.eventStaff;
             }
-             set
+            set
             {
                 this.eventStaff = new List<EventStaff>();
             }
