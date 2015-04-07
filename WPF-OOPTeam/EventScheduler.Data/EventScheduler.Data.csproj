@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Coordinates.cs" />
+    <Compile Include="SerializeEvent.cs" />
     <Compile Include="Staff\StaffAbstraction\AnimationStaff.cs" />
     <Compile Include="Staff\Cook.cs" />
     <Compile Include="Staff\DJ.cs" />

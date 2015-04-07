@@ -18,8 +18,17 @@ using EventScheduler.Data.Staff;
 using System.Threading;
 using System.Globalization;
 using EventScheduler.Data.Enumerations;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
+
+
+
+
 namespace WpfApplication1
 {
+    using EventScheduler.Data;
+
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -171,7 +180,19 @@ namespace WpfApplication1
             eventFour.ParticipantsList.Add(aishe);
             eventFour.Title = "Pijama party";
             #endregion
-            eventsList = new List<Event> { eventOne, eventTwo, eventThree, eventFour, eventFive };
+
+
+            //IFormatter formatter = new BinaryFormatter();
+            ////SerializeEvent.SerializeEventType(eventOne, "EventOne", formatter);
+            //FileStream s = new FileStream("EventName", FileMode.Create);
+            //formatter.Serialize(s, eventFour);
+            //s.Close();
+
+            SerializeEvent.SerializeEventType(eventFour, "Event4.txt");
+            Event Deserialized = SerializeEvent.DeserializeEvent("Event4.txt");
+
+
+            eventsList = new List<Event> { eventOne, eventTwo, eventThree, eventFour, eventFive,Deserialized };
             // eventsList.Add(eventOne);
             // eventsList.Add(eventTwo);
             // eventsList.Add(eventThree);

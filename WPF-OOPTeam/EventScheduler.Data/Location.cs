@@ -6,6 +6,8 @@
     using System.Linq;
     using System.Text;
 
+
+    [Serializable]
     public class Location
     {
         public const int MinRestaurantNameLength = 3;

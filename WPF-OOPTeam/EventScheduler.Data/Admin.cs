@@ -5,6 +5,8 @@
     using System.Linq;
     using System.Text;
 
+    [Serializable]
+
     public class Admin : Organizer
     {
         // TODO: encapsulate and implement
