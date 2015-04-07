@@ -103,10 +103,11 @@ using EventScheduler.Data.Interfaces;
             }
              set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new Exception("Meeting point must be assigned.");
-                }
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    throw new Exception("Meeting point must be assigned.");
+                //}
+                Validator.CheckIfNullOrEmpty(value, string.Format(ErrorMessages.NullOrEmpty, "Meeting point"));
                 this.meetingPoint = value;
             }
         }
@@ -123,6 +124,7 @@ using EventScheduler.Data.Interfaces;
                 {
                     throw new Exception("Budget of the event must be assigned.");
                 }
+
                 this.budget = value;
             }
         }
