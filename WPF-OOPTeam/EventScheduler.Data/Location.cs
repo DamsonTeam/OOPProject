@@ -1,6 +1,6 @@
 ﻿namespace EventScheduler.Data
 {
-    using EventScheduler.Data.Exceptions;
+    using EventScheduler.Data;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -30,7 +30,7 @@
                 //{
                 //    throw new ArgumentOutOfRangeException("Restaurant name must be b/n 3 and 15 symbols.");
                 //}
-                Validator.CheckIfLengthIsValid(value, MaxRestaurantNameeLength, MinRestaurantNameLength, string.Format(ErrorMessages.Length, "Restaurant name", MinRestaurantNameLength, MaxRestaurantNameeLength));
+                //Validator.CheckIfLengthIsValid(value, MaxRestaurantNameeLength, MinRestaurantNameLength, string.Format(ErrorMessages.Length, "Restaurant name", MinRestaurantNameLength, MaxRestaurantNameeLength));
                 this.restaurant = value;
 
             }
