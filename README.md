@@ -35,9 +35,9 @@
 	
 	Staff data:
 	
-				Event staff
-				/	\
-		Animation staff		Restaurant staff
+					Event staff
+						/	\
+			Animation staff		Restaurant staff
 			/	\			/	\
 			DJ	Singer		Cook	Waiter
 	
