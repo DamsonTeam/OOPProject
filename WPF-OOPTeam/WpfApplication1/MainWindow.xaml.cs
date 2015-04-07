@@ -15,9 +15,12 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using EventScheduler.Data;
 using EventScheduler.Data.Staff;
+using System.Threading;
+using System.Globalization;
 
 namespace WpfApplication1
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -25,10 +28,12 @@ namespace WpfApplication1
 
     public partial class MainWindow : Window
     {
+
         public List<Event> eventsList;
         
         public MainWindow()
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             InitializeComponent();
             /*var colllect = new List<Admin>
                 {
@@ -67,7 +72,7 @@ namespace WpfApplication1
             eventOne.Title = "Naj ludoto party ever";
 
             eventTwo.Budget = 6500.00m;
-            eventTwo.DateTime = DateTime.Parse("08.12.2015 22:00:00");
+            eventTwo.DateTime = new DateTime(2015,12,08,22,00,00); 
             eventTwo.EventStaff = new List<EventStaff>() { new DJ("MC Typ", eventTwo, 200),new Singer("Analiq",eventTwo,5000,true) , new Cook("Bai Ivan", eventTwo, 50, true) };
             eventTwo.Location = new Location(new Coordinates(80.25m, 120.12m), "Riblja Corba");
             eventTwo.MeetingPoint = "NDK";
@@ -82,7 +87,7 @@ namespace WpfApplication1
             eventTwo.Title = "Narko party";
 
             eventThree.Budget = 26500.00m;
-            eventThree.DateTime = DateTime.Parse("31.12.2015 22:00:00");
+            eventThree.DateTime = new DateTime(2015,12,31,22,00,00); 
             eventThree.EventStaff = new List<EventStaff>() {  new Singer("Jochan Strauss JR", eventThree, 25000, true)};
             eventThree.Location = new Location(new Coordinates(54.25m, 50.12m), "NDK");
             eventThree.MeetingPoint = "NDK";
