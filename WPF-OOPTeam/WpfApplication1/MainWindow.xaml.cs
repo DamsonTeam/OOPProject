@@ -60,11 +60,6 @@ namespace WpfApplication1
             MyDataGrid.ItemsSource = colllect;*/
 
             var rnd = new Random();
-            var eventOne = new Event();
-            var eventTwo = new Event();
-            var eventThree = new Event();
-            var eventFour = new Event();
-            var eventFive = new Event();
 
 
             #region ParticipantsMaking
@@ -80,11 +75,14 @@ namespace WpfApplication1
             var mariq = new Participant("Iliq", "Marieva", Gender.Female, "GZgolem@payner.begay", "0888 889 999", 1200, 34);
 
             #endregion
+            
+            #region EnventsMaking
 
-
-            #region enventMakeing
-
-
+            var eventOne = new Event();
+            var eventTwo = new Event();
+            var eventThree = new Event();
+            var eventFour = new Event();
+            var eventFive = new Event();
 
             eventOne.Budget = 1205.00m;
             eventOne.DateTime = DateTime.Parse("01.12.2015 20:00:00");
@@ -92,8 +90,6 @@ namespace WpfApplication1
             eventOne.Location = new Location(new Coordinates(40.25m, 10.12m), "Limoncheto");
             eventOne.MeetingPoint = "Pazara";
             eventOne.Organizer = new Organizer("Ivailo", "Kenov", EventScheduler.Data.Enumerations.Gender.Male, "i_k@abv.bg", "+359 888 888 888", 1300, 25);
-            eventOne.ParticipantsList = new List<Participant>();
-
             eventOne.Title = "Naj ludoto party ever";
             //for (int i = 0; i < 20; i++)
             //{
@@ -102,11 +98,20 @@ namespace WpfApplication1
             //        new Participant("Participant" + (i + 1).ToString(), "LastName" + (i + 1).ToString(),(Gender)gender, eventOne,
             //            "p" + (i + 1).ToString() + "@gmail.com", "0888 888 8" + (i + 1).ToString(), 25));
             //}
-            eventOne.ParticipantsList.Add(pesho);
-            eventOne.ParticipantsList.Add(moni);
-            eventOne.ParticipantsList.Add(aishe);
-            eventOne.ParticipantsList.Add(ciganIN);
-            eventOne.ParticipantsList.Add(mariq);
+
+            #region Testing Observer Pattern
+
+            eventOne.AddParticipant(pesho);
+            eventOne.NotifyAllParticipants("Subject", "Description");
+            eventOne.AddParticipant(moni);
+            eventOne.NotifyAllParticipants("Subject2", "Description2");
+            #endregion
+
+            eventOne.AddParticipant(pesho);
+            eventOne.AddParticipant(moni);
+            eventOne.AddParticipant(aishe);
+            eventOne.AddParticipant(ciganIN);
+            eventOne.AddParticipant(mariq);
 
 
 
@@ -116,7 +121,6 @@ namespace WpfApplication1
             eventTwo.Location = new Location(new Coordinates(80.25m, 120.12m), "Riblja Corba");
             eventTwo.MeetingPoint = "NDK";
             eventTwo.Organizer = new Organizer("Doncho", "Minkov", EventScheduler.Data.Enumerations.Gender.Male, "D_M@abv.bg", "+359 888 888 666", 6500, 25);
-            eventTwo.ParticipantsList = new List<Participant>();
             //for (int i = 0; i < 20; i++)
             //{
             //    var gender = rnd.Next(0, 3);
@@ -124,10 +128,10 @@ namespace WpfApplication1
             //        new Participant("Participant" + (i + 21).ToString(), "LastName" + (i + 21).ToString(), (Gender)gender, eventTwo,
             //            "p" + (i + 21).ToString() + "@gmail.com", "0888 888 8" + (i + 21).ToString(), 25));
             //}
-            eventTwo.ParticipantsList.Add(hasan);
-            eventTwo.ParticipantsList.Add(analiq);
-            eventTwo.ParticipantsList.Add(krisko);
-            eventTwo.ParticipantsList.Add(tazi);
+            eventTwo.AddParticipant(hasan);
+            eventTwo.AddParticipant(analiq);
+            eventTwo.AddParticipant(krisko);
+            eventTwo.AddParticipant(tazi);
 
             eventTwo.Title = "Narko party";
 
@@ -137,7 +141,6 @@ namespace WpfApplication1
             eventThree.Location = new Location(new Coordinates(54.25m, 50.12m), "NDK");
             eventThree.MeetingPoint = "NDK";
             eventThree.Organizer = new Organizer("Evlogi", "Georgiev", EventScheduler.Data.Enumerations.Gender.Male, "EG@abv.bg", "+359 888 888 686", 26500, 25);
-            eventThree.ParticipantsList = new List<Participant>();
             //for (int i = 0; i < 20; i++)
             //{
             //    var gender = rnd.Next(0, 3);
@@ -145,14 +148,14 @@ namespace WpfApplication1
             //        new Participant("Participant" + (i + 321).ToString(), "LastName" + (i + 321).ToString(), (Gender)gender, eventThree,
             //            "p" + (i + 321).ToString() + "@gmail.com", "0888 888 8" + (i + 321).ToString(), 125));
             //}
-            eventThree.ParticipantsList.Add(hasan);
-            eventThree.ParticipantsList.Add(analiq);
-            eventThree.ParticipantsList.Add(krisko);
-            eventThree.ParticipantsList.Add(tazi);
-            eventThree.ParticipantsList.Add(mariq);
-            eventThree.ParticipantsList.Add(ciganIN);
-            eventThree.ParticipantsList.Add(moni);
-            eventThree.ParticipantsList.Add(pesho);
+            eventThree.AddParticipant(hasan);
+            eventThree.AddParticipant(analiq);
+            eventThree.AddParticipant(krisko);
+            eventThree.AddParticipant(tazi);
+            eventThree.AddParticipant(mariq);
+            eventThree.AddParticipant(ciganIN);
+            eventThree.AddParticipant(moni);
+            eventThree.AddParticipant(pesho);
 
             eventThree.Title = "Forever Classics";
 
@@ -161,7 +164,6 @@ namespace WpfApplication1
             eventFour.Location = new Location(new Coordinates(4.25m, 0.12m), "U vas");
             eventFour.MeetingPoint = "Mr. Popa";
             eventFour.Organizer = new Organizer("Nikolai", "Kostov", EventScheduler.Data.Enumerations.Gender.Male, "nikiIT@abv.bg", "+359 888 888 000", 2.5m, 25);
-            eventFour.ParticipantsList = new List<Participant>();
             //for (int i = 0; i < 20; i++)
             //{
             //    var gender = rnd.Next(0, 3);
@@ -169,20 +171,20 @@ namespace WpfApplication1
             //        new Participant("Participant" + (i + 4321).ToString(), "LastName" + (i + 4321).ToString(), (Gender)gender, eventFour,
             //            "p" + (i + 4321).ToString() + "@gmail.com", "0888 888 8" + (i + 4321).ToString(), 0));
             //}
-            eventFour.ParticipantsList.Add(hasan);
-            eventFour.ParticipantsList.Add(analiq);
-            eventFour.ParticipantsList.Add(krisko);
-            eventFour.ParticipantsList.Add(tazi);
-            eventFour.ParticipantsList.Add(mariq);
-            eventFour.ParticipantsList.Add(ciganIN);
-            eventFour.ParticipantsList.Add(moni);
-            eventFour.ParticipantsList.Add(pesho);
-            eventFour.ParticipantsList.Add(siuleiman);
-            eventFour.ParticipantsList.Add(aishe);
+            eventFour.AddParticipant(hasan);
+            eventFour.AddParticipant(analiq);
+            eventFour.AddParticipant(krisko);
+            eventFour.AddParticipant(tazi);
+            eventFour.AddParticipant(mariq);
+            eventFour.AddParticipant(ciganIN);
+            eventFour.AddParticipant(moni);
+            eventFour.AddParticipant(pesho);
+            eventFour.AddParticipant(siuleiman);
+            eventFour.AddParticipant(aishe);
             eventFour.Title = "Pijama party";
             #endregion
 
-
+            #region Serialization
             //IFormatter formatter = new BinaryFormatter();
             ////SerializeEvent.SerializeEventType(eventOne, "EventOne", formatter);
             //FileStream s = new FileStream("EventName", FileMode.Create);
@@ -204,8 +206,7 @@ namespace WpfApplication1
             List<Event> returnedList = SerializeEvent.DeserializeEventList("AllEvents.bin");
             eventsList = returnedList;
             MyComboBox.ItemsSource = returnedList;
-
-
+            #endregion
         }
 
 

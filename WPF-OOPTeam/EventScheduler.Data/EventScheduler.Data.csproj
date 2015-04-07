@@ -41,6 +41,9 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Coordinates.cs" />
+    <Compile Include="Interfaces\IEventObservable.cs" />
+    <Compile Include="Interfaces\IEventObserver.cs" />
+    <Compile Include="Notification.cs" />
     <Compile Include="Enumerations\Status.cs" />
     <Compile Include="Exceptions\ErrorMessages.cs" />
     <Compile Include="Exceptions\Validator.cs" />

@@ -3,14 +3,25 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading;
 
     using EventScheduler.Data.Enumerations;
     using EventScheduler.Data.Exceptions;
     using EventScheduler.Data.Staff.StaffAbstraction;
+    using EventScheduler.Data.Interfaces;
 
     [Serializable()]
-    public class Event
+    public class Event : IEventObservable
     {
+        // OBSERVER PATTERN, http://www.c-sharpcorner.com/UploadFile/udeshikah/observer-pattern-in-net/
+
+        /* This delegate holds the list of methods to be invoked when subject chnages */
+        private delegate void NotificationDelegate(Notification notification);
+        /* This is an wrapper around the subjectchnageddelegate to avoid executing it externally 
+         * event gives publisher-subscriber model to the delegate
+         */
+        private event NotificationDelegate notificationReceived;        
+        
         public const int EventTitleLenghtMinValue = 2;
 
         private string title;
@@ -32,8 +43,9 @@
             {
                 this.title = DateTimeString;
             }
-
+            this.EventStatus = EventStatus.Active;
             this.comment = string.Concat(this.Comment, DateTimeString);
+            this.ParticipantsList = new List<Participant>();
         }
 
         public string Title
@@ -101,11 +113,11 @@
         {
             get
             {
-                return this.participantsList;
+                return new List<Participant>(this.participantsList);
             }
-            set
+            private set
             {
-                this.participantsList = new List<Participant>();
+                this.participantsList = value;
             }
         }
 
@@ -166,7 +178,7 @@
                 this.comment = String.Format("{0}\n{1}", this.comment, value);
             }
         }
-        
+
         public EventStatus EventStatus
         {
             get
@@ -179,13 +191,23 @@
             }
         }
 
-        public override string ToString()
+
+        public void AddParticipant(Participant participant)
         {
-            return String.Format(@"Event: {0}
-                                   Date: {1}
-                                   Location: {2}
-                                   Organizer: {3}
-                                   Meeting point: {4}", this.Title, this.DateTime, this.Location, this.Organizer, this.MeetingPoint);
+            this.ParticipantsList.Add(participant);
+            this.notificationReceived += participant.ReceiveNotification;
+        }
+
+        public void RemoveParticipant(Participant participant)
+        {
+            this.ParticipantsList.Remove(participant);
+            this.notificationReceived -= participant.ReceiveNotification;
+        }
+        
+        public void NotifyAllParticipants(string subject, string description)
+        {
+            /* The only thing this method does is executing the Notify */
+            this.Notify(new Notification(this, subject, description));
         }
 
         public void CarDistribution(Event eventToOrganize)
@@ -207,6 +229,29 @@
                     }
                 }
             }
+        }
+
+        /* This is the method where subject is notifying to the oberservers */
+        private void Notify(Notification notification)
+        {
+            /* Interlocked is the best way to check whether event is null in a thread safe way             
+             */
+            Interlocked.CompareExchange(ref notificationReceived, null, null);
+
+            if (notificationReceived != null)
+            {
+                /* Now we notify */
+                notificationReceived(notification);
+            }
+        }
+
+        public override string ToString()
+        {
+            return String.Format(@"Event: {0}
+                                   Date: {1}
+                                   Location: {2}
+                                   Organizer: {3}
+                                   Meeting point: {4}", this.Title, this.DateTime, this.Location, this.Organizer, this.MeetingPoint);
         }
     }
 }

@@ -6,9 +6,10 @@
 
     using EventScheduler.Data.Enumerations;
     using Interfaces;
+using System.Collections.Generic;
 
     [Serializable]
-    public class Participant : Person, IParticipant, IDriver
+    public class Participant : Person, IParticipant, IDriver, IEventObserver
     {
         private static int participantCount = 0;
 
@@ -158,6 +159,13 @@
                 participant.HasPaid = false;
                 Console.WriteLine("Money paid not enough.");
             }
+        }
+
+        public List<Notification> Notifications = new List<Notification>();
+
+        public void ReceiveNotification(Notification notification)
+        {
+            Notifications.Add(notification);
         }
 
         public void AddMusicalWish(string wish)
