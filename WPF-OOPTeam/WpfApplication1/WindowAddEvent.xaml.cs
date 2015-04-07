@@ -137,7 +137,7 @@ namespace WpfApplication1
                    
                 }
                
-            }
+            }            /////
             MessageBox.Show("EventAdded");
             winAdEv.Close();
         }
