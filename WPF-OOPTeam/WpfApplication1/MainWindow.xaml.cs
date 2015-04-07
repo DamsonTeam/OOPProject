@@ -204,6 +204,7 @@ namespace WpfApplication1
             eventsList = returnedList;
             MyComboBox.ItemsSource = returnedList;
 
+
         }
 
 

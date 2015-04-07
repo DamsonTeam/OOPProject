@@ -21,17 +21,19 @@
         private decimal moneyPaid;
         private string email;
         private int seatsAvailable;
+        private bool isDriver;
 
         public Participant()
         { }
 
-        public Participant(string firstName, string lastName, Gender gender, string email, string gsm, decimal moneyPaid, int age)
+        public Participant(string firstName, string lastName, Gender gender, string email, string gsm, decimal moneyPaid, int age, bool isDriver=false)
             : base(firstName, lastName, age,gender)
         {
             this.ParticipantGender = gender;
             this.EMail = email;
             this.GSM = gsm;
             this.MoneyPaid = moneyPaid;
+            this.IsDriver = isDriver;
 
         }
         public Gender ParticipantGender { get; private set; }
@@ -40,6 +42,12 @@
         {
             get;
             private set;
+        }
+
+        public bool IsDriver
+        {
+            get { return this.isDriver; }
+            set { this.isDriver = value; }
         }
 
         public Event EventToOrganize
@@ -147,17 +155,6 @@
             }
         }
 
-        string IDriver.MeetPoint
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
 
         public void AddMusicalWish(string wish)
         {
@@ -167,5 +164,6 @@
                 sw.WriteLine(wish);
             }
         }
+
     }
 }

@@ -71,17 +71,6 @@
         }
 
         public Gender Gender { get; private set; }
-        
-        public void RoomDistribuition(Participant person)//  Rooms room
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void CarDistribution(Participant person, Participant driver)
-        {
-            throw new System.NotImplementedException();
-        }
-
-       
+      
     }
 }

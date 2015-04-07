@@ -170,6 +170,26 @@
                                    Meeting point: {4}", this.Title, this.DateTime, this.Location, this.Organizer, this.MeetingPoint);
         }
 
+        public void CarDistribution(Event eventToOrganize)
+        {
+
+            var participantsInCars = new Dictionary<string, string>();
+
+           var participantsToDistribute = participantsList.Where(x=>x.IsDriver==false);
+
+            var participantsDrivers = participantsList.Where(x=>x.IsDriver==true);
+           
+            foreach (var driver in participantsDrivers)
+            {
+                for (int j = 0; j < participantsToDistribute.Count(); j++)
+			        {
+			        for (int i = 0; i < driver.SeatsAvailable; i++)
+                        {
+                            participantsInCars.Add(driver.GSM, participantsToDistribute.ElementAt(j).GSM);
+                        }
+			        }
+            }
+        }
 
     }
 }

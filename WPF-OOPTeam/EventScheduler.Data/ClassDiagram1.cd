@@ -9,8 +9,15 @@
   </Class>
   <Class Name="EventScheduler.Data.Event" Collapsed="true">
     <Position X="12" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="EventScheduler.Data.Event.Status" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Event.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAQAAEAEQABAAEAMAAIACAACBAAMAAQADACAAAAAgAA=</HashCode>
+      <HashCode>AAQAAEAEQABAAEAMAAIACAACBAAMAAUADADAAAAAgAA=</HashCode>
       <FileName>Event.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -40,7 +47,7 @@
   <Class Name="EventScheduler.Data.Person" Collapsed="true">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAABAAACAAAAAACAAAAAAAAEAAABACAAAAAg=</HashCode>
+      <HashCode>AAAAAEAAAABAQACAAEAAAAAAAAAAAAAAAAAACAAAAAg=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
