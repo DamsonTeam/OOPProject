@@ -25,12 +25,12 @@ using EventScheduler.Data.Enumerations;
         public Participant()
         { }
 
-        public Participant(string firstName, string lastName,Gender gender, Event eventToJoin, string email, string gsm, decimal moneyPaid)
+        public Participant(string firstName, string lastName,Gender gender, /*Event eventToJoin,*/ string email, string gsm, decimal moneyPaid)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             this.ParticipantGender = gender;
-            this.EventToOrganize = eventToJoin;
+            //this.EventToOrganize = eventToJoin;
             this.EMail = email;
             this.GSM = gsm;
             this.MoneyPaid = moneyPaid;
@@ -43,7 +43,7 @@ using EventScheduler.Data.Enumerations;
             get;
             private set;
         }
-
+        /*
         public Event EventToOrganize
         {
             get
@@ -54,7 +54,7 @@ using EventScheduler.Data.Enumerations;
             {
                 this.eventToAttend = value;
             }
-        }
+        }*/
         public int SeatsAvailable
         {
             get
