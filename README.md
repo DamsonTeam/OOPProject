@@ -38,8 +38,8 @@
 				Event staff
 				/	\
 		Animation staff		Restaurant staff
-		/	\		/	\
-		DJ	Singer		Cook	Waiter
+			/	\		/	\
+			DJ	Singer		Cook	Waiter
 	
 	Event staff – all the people in charge of organizing the event
 	Animation staff – the staff responsible for animating the event
