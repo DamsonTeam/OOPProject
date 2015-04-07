@@ -6,6 +6,7 @@
     using System.Text;
     using Interfaces;
 
+    [Serializable]
     public abstract class EventStaff : Person
     {
         protected string Name;

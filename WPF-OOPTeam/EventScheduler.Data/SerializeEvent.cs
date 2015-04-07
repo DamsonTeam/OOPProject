@@ -33,6 +33,49 @@ namespace EventScheduler.Data
             FileStream s = new FileStream(fileName, FileMode.Open);
             Event t = (Event)formatter.Deserialize(s);
             return t;
-        }  
+        }
+
+
+        public static void SerializeEventList(List<Event> ListOfEvents, string FileName)
+        {
+
+            try
+            {
+                using (Stream stream = File.Open(FileName, FileMode.Create))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, ListOfEvents);
+                }
+            }
+            catch (IOException)
+            {
+            }
+        }
+
+
+        public static List<Event> DeserializeEventList(string FileName)
+        {
+            try
+            {
+                using (Stream stream = File.Open(FileName, FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+
+                    var Deserialized = (List<Event>)bin.Deserialize(stream);
+                    return (List<Event>)Deserialized;
+                }
+            }
+            catch (IOException)
+            {
+                return new List<Event>();
+            }
+        }
+
+
+
+
+
+
+
     }
 }

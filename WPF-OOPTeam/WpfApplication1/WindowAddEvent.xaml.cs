@@ -137,6 +137,7 @@ namespace WpfApplication1
                 if (item.GetType() == typeof(MainWindow))
                 {
                     (item as MainWindow).eventsList.Add(currentEv);
+                    SerializeEvent.SerializeEventList((item as MainWindow).eventsList, "AllEvents.bin");
                     (item as MainWindow).MyComboBox.ItemsSource = null;
                     
                    

@@ -7,7 +7,7 @@
     
     using EventScheduler.Data.Staff;
 
-    [Serializable]
+    [Serializable()]
     public class Event 
     {
         private string title;

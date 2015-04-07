@@ -188,18 +188,24 @@ namespace WpfApplication1
             //formatter.Serialize(s, eventFour);
             //s.Close();
 
-            SerializeEvent.SerializeEventType(eventFour, "Event4.txt");
-            Event Deserialized = SerializeEvent.DeserializeEvent("Event4.txt");
+            SerializeEvent.SerializeEventType(eventFour, "Event.txt");
+            Event Deserialized = SerializeEvent.DeserializeEvent("Event.txt");
 
 
-            eventsList = new List<Event> { eventOne, eventTwo, eventThree, eventFour, eventFive,Deserialized };
+            //eventsList = new List<Event> { eventOne, eventTwo, eventThree, eventFour, eventFive,Deserialized };
             // eventsList.Add(eventOne);
             // eventsList.Add(eventTwo);
             // eventsList.Add(eventThree);
             // eventsList.Add(eventFour);
             // eventsList.Add(eventFive);
-            MyComboBox.ItemsSource = eventsList;
+
+
+            List<Event> returnedList = SerializeEvent.DeserializeEventList("AllEvents.bin");
+            eventsList = returnedList;
+            MyComboBox.ItemsSource = returnedList;
+
         }
+
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -228,6 +234,7 @@ namespace WpfApplication1
             WindowAddEvent.ShowME();
             //Event az = new Event() { Title = "Some stupid Event"};
             //this.eventsList.Add(az);
+            // TODO SERIALIZE HERE
             MyComboBox.ItemsSource = null;
             MyComboBox.ItemsSource = eventsList;
             
