@@ -48,8 +48,9 @@
     <Compile Include="Event.cs" />
     <Compile Include="EventStaff.cs" />
     <Compile Include="Enumerations\Gender.cs" />
-    <Compile Include="IGeographicLocaion.cs" />
-    <Compile Include="IParticipant.cs" />
+    <Compile Include="Interfaces\IGeographicLocaion.cs" />
+    <Compile Include="Interfaces\IManageEvent.cs" />
+    <Compile Include="Interfaces\IParticipant.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Organizer.cs" />
     <Compile Include="Participant.cs" />

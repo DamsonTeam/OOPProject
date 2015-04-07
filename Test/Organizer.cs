@@ -6,7 +6,7 @@
     using System.Text;
     using Enumerations;
 
-    public class Organizer : Participant, IParticipant
+    public class Organizer : Participant, IParticipant, IManageEvent
     {
 
         public Organizer(string firstName, string lastName, Gender sex = Gender.NonSpecified)

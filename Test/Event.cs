@@ -10,7 +10,7 @@
         //dobaveno Andrej 27.03
         private List<EventStaff> eventStaffs = new List<EventStaff>();
         
-        private int meetingPoint;
+        private Location meetingPoint;
         private int budget;
         private int field;
         
