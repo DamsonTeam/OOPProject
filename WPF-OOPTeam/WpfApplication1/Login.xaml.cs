@@ -54,7 +54,7 @@ namespace WpfApplication1
                 {
                     if (item.GetType() == typeof(MainWindow))
                     {
-                        (item as MainWindow).AddButtoin.IsEnabled = true;
+                        (item as MainWindow).AddEvent.IsEnabled = true;
                         (item as MainWindow).ButtonLogin.IsEnabled = true;
                     }
                 }

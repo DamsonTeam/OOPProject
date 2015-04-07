@@ -150,5 +150,18 @@ namespace WpfApplication1
             this.MyDataGrid.ItemsSource = list;
         }
 
+        private void AddEvent_Click(object sender, RoutedEventArgs e)
+        {
+            // Show form for iput information for event.........
+            Event az = new Event() { Title = "Some stupid Event"};
+            this.eventsList.Add(az);
+            MyComboBox.ItemsSource = null;
+            MyComboBox.ItemsSource = eventsList;
+            MessageBox.Show("EventAdded");
+
+            return;
+        }
+
+
     }
 }
