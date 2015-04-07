@@ -207,7 +207,7 @@ namespace WpfApplication1
             //this.eventsList.Add(az);
             MyComboBox.ItemsSource = null;
             MyComboBox.ItemsSource = eventsList;
-            MessageBox.Show("EventAdded");
+            
 
             return;
         }
