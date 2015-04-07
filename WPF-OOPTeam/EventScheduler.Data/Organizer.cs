@@ -7,7 +7,7 @@
     using Interfaces;
 
     using Enumerations;
-
+    [Serializable]
     public class Organizer : Participant, IParticipant
     {
         

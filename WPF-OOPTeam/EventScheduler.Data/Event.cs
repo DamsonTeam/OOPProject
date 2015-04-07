@@ -7,7 +7,8 @@
     
     using EventScheduler.Data.Staff;
 
-    public class Event
+    [Serializable]
+    public class Event 
     {
         private string title;
         private DateTime dateTime;
@@ -17,6 +18,19 @@
         private string meetingPoint;
         private decimal budget;
         private List<EventStaff> eventStaff;
+        private string comment;
+
+
+        public Event(string title = "NewEvent"){
+
+            string DateTimeString =String.Format("EventCreated{0}{1}",DateTime.Now.ToShortDateString(),DateTime.Now.ToShortTimeString());
+
+            if(title=="NewEvent"){
+                this.title = DateTimeString;
+            }
+            this.Comment = string.Concat(this.Comment, DateTimeString);
+            
+        }
 
 
         public string Title
@@ -136,6 +150,15 @@
         public enum Status
         {
             Active, Cancelled, Past
+        }
+
+        public string Comment
+        {
+            get { return this.comment; }
+            set
+            {
+                this.comment = value;
+            }
         }
 
         public override string ToString()

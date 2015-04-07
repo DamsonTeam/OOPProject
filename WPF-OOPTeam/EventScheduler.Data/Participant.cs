@@ -9,7 +9,7 @@
 
     using Interfaces;
     using EventScheduler.Data.Enumerations;
-
+    [Serializable]
     public class Participant : Person, IParticipant, IDriver
     {
         private static int participantCount = 0;
@@ -17,7 +17,7 @@
         private bool hasPaid = false;
         private string gsm;
         private Event eventToAttend;
-        //private string meetPoint;
+        private string meetPoint;
         private decimal moneyPaid;
         private string email;
         private int seatsAvailable;
@@ -70,8 +70,11 @@
         }
         public string MeetPoint
         {
-            get;
-            set;
+            get {return this.meetPoint;}
+            set
+            {
+                this.meetPoint = value;
+            }
         }
         public bool HasPaid
         {

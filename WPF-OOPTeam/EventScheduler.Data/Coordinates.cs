@@ -2,7 +2,10 @@
 
 namespace EventScheduler.Data
 {
+    
     using System;
+    [Serializable]
+
     public struct Coordinates
     {
         public decimal Latitude { get; set; }
