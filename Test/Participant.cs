@@ -8,11 +8,11 @@
     using System.Threading.Tasks;
     using Enumerations;
 
-    public class Participant : Person, IParticipant, IDriver
+    public class Participant : Person, IParticipant
     {
-        private int moneyPaid;
-        private int gsm;
-        private int email;
+        private decimal moneyPaid;
+        private string gsm;
+        private string email;
 
         public Participant(string firstName, string lastName, Gender sex = Gender.NonSpecified)
             : base(firstName, lastName, sex)
@@ -20,7 +20,7 @@
 
         }
 
-        public int HasPaid
+        public bool HasPaid
         {
             get
             {
@@ -31,7 +31,7 @@
             }
         }
 
-        public int GSM
+        public string GSM
         {
             get
             {
@@ -53,7 +53,7 @@
             }
         }
 
-        public int MoneyPaid
+        public decimal MoneyPaid
         {
             get
             {
@@ -120,7 +120,7 @@
             }
         }
 
-        public int MeetPoint
+        public Location MeetPoint
         {
             get
             {
