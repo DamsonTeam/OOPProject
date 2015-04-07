@@ -17,10 +17,10 @@
         <!--ItemsSource="{Binding Source = MyCollection}"-->
         <Label Style="{StaticResource MyStyle}" Content="Participants" HorizontalAlignment="Left" Margin="292,10,0,0" VerticalAlignment="Top"/>
         <Label Style="{StaticResource MyStyle}" Content="Events" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.475,0.498" Margin="58,21,0,0"/>
-        <ComboBox HorizontalAlignment="Left" Margin="31,55,0,0" VerticalAlignment="Top" Width="120" Height="21">
-            <Label Content="Event0" HorizontalAlignment="Stretch" VerticalAlignment="Center"></Label>
+        <ComboBox x:Name="MyComboBox" HorizontalAlignment="Left" Margin="31,55,0,0" VerticalAlignment="Top" Width="120" Height="21" SelectionChanged="ComboBox_SelectionChanged">
+            <!--<Label Content="Event0" HorizontalAlignment="Stretch" VerticalAlignment="Center"></Label>
             <Label Content="Event1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Label>
-            <Label Content="Event2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Label>
+            <Label Content="Event2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Label>-->
 
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="31,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="120"><Run Text="Event Info"/></TextBlock>

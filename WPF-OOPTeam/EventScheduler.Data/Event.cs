@@ -61,7 +61,7 @@
             }
              set
             {
-                this.location = new Location();
+                this.location = value;
             }
         }
 
@@ -73,7 +73,7 @@
             }
              set
             {
-                this.organizer = new Organizer();
+                this.organizer = value;
             }
         }
 
@@ -97,7 +97,7 @@
             }
              set
             {
-                if (string.IsNullOrEmpty(MeetingPoint))
+                if (string.IsNullOrEmpty(value))
                 {
                     throw new Exception("Meeting point must be assigned.");
                 }
