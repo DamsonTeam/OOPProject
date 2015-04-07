@@ -8,7 +8,7 @@
     using System.Threading.Tasks;
 
     using Interfaces;
-using EventScheduler.Data.Enumerations;
+    using EventScheduler.Data.Enumerations;
 
     public class Participant : Person, IParticipant, IDriver
     {
@@ -17,7 +17,7 @@ using EventScheduler.Data.Enumerations;
         private bool hasPaid = false;
         private string gsm;
         private Event eventToAttend;
-        private string meetPoint;
+        //private string meetPoint;
         private decimal moneyPaid;
         private string email;
         private int seatsAvailable;
@@ -25,16 +25,14 @@ using EventScheduler.Data.Enumerations;
         public Participant()
         { }
 
-        public Participant(string firstName, string lastName,Gender gender, Event eventToJoin, string email, string gsm, decimal moneyPaid)
+        public Participant(string firstName, string lastName, Gender gender, string email, string gsm, decimal moneyPaid)
+            : base(firstName, lastName, gender)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
             this.ParticipantGender = gender;
-            this.EventToOrganize = eventToJoin;
             this.EMail = email;
             this.GSM = gsm;
             this.MoneyPaid = moneyPaid;
-            ++participantCount;
+
         }
         public Gender ParticipantGender { get; private set; }
 
@@ -94,7 +92,7 @@ using EventScheduler.Data.Enumerations;
             }
             set
             {
-                if (string.IsNullOrEmpty(value) || value.Length < 8)
+                if (string.IsNullOrEmpty(value) || value.Length < 6)
                 {
                     throw new Exception("Length of GSM number must be at least 8 symbols.");
                 }
