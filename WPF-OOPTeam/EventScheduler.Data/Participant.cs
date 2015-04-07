@@ -25,8 +25,8 @@
         public Participant()
         { }
 
-        public Participant(string firstName, string lastName, Gender gender, string email, string gsm, decimal moneyPaid)
-            : base(firstName, lastName, gender)
+        public Participant(string firstName, string lastName, Gender gender, string email, string gsm, decimal moneyPaid, int age)
+            : base(firstName, lastName, age,gender)
         {
             this.ParticipantGender = gender;
             this.EMail = email;
