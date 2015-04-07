@@ -28,5 +28,13 @@
                 throw new ArgumentOutOfRangeException(message);
             }
         }
+
+        public static void CheckIfLengthIsAtLeastNSymbols(string text, int min, string message = null)
+        {
+            if (text.Length < min)
+            {
+                throw new ArgumentOutOfRangeException(message);
+            }
+        }
     }
 }

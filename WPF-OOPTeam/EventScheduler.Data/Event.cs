@@ -7,9 +7,12 @@
     
     using EventScheduler.Data.Staff;
 using EventScheduler.Data.Interfaces;
+    using EventScheduler.Data.Exceptions;
 
     public class Event
     {
+        public const int EventTitleLenghtMinValue = 2;
+
         private string title;
         private DateTime dateTime;
         private Location location;
@@ -28,10 +31,12 @@ using EventScheduler.Data.Interfaces;
             }
              set
             {
-                if (string.IsNullOrEmpty(value) || value.Length < 2)
-                {
-                    throw new Exception("Event title length must be at least 2 symbols.");
-                }
+                //if (string.IsNullOrEmpty(value) || value.Length < 2)
+                //{
+                //    throw new Exception("Event title length must be at least 2 symbols.");
+                //}
+                Validator.CheckIfNullOrEmpty(value, string.Format(ErrorMessages.NullOrEmpty, "Event title"));
+                Validator.CheckIfLengthIsAtLeastNSymbols(value, EventTitleLenghtMinValue, string.Format(ErrorMessages.LengthAtLeast, "Event title", EventTitleLenghtMinValue));
 
                 this.title = value;
             }
