@@ -7,20 +7,33 @@
 
     public class Location
     {
-        public int Restaurant
+        private Coordinates coordinates;
+        private string restaurant;
+        public Location(Coordinates coordinates, string restaurant = "NOT SPECIFIED")
+        {
+            this.coordinates = coordinates;
+            this.Restaurant = restaurant;
+        }
+        public string Restaurant
         {
             get
             {
-                throw new System.NotImplementedException();
+                return this.restaurant;
             }
-            set
+            private set
             {
+                if (value.Length<3 || value.Length>15)
+                {
+                    throw new ArgumentOutOfRangeException("Restaurant name must be b/n 3 and 15 symbols.");
+                }
+                this.restaurant = value;
+
             }
         }
 
         public struct Coordinates
         {
-            public decimal Latitude  { get; set; }
+            public decimal Latitude { get; set; }
             public decimal Longitude { get; set; }
 
             public Coordinates(decimal latitude, decimal longitude) //constructor 

@@ -40,13 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
-    <Compile Include="Staff\AnimationStaff.cs" />
+    <Compile Include="Staff\StaffAbstraction\AnimationStaff.cs" />
     <Compile Include="Staff\Cook.cs" />
     <Compile Include="Staff\DJ.cs" />
     <Compile Include="Enumerations\Gender.cs" />
     <Compile Include="Enumerations\PaymentMethod.cs" />
     <Compile Include="Event.cs" />
-    <Compile Include="Staff\EventStaff.cs" />
+    <Compile Include="Staff\StaffAbstraction\EventStaff.cs" />
     <Compile Include="Interfaces\IDriver.cs" />
     <Compile Include="Interfaces\IParticipant.cs" />
     <Compile Include="Interfaces\IRequiredStaff.cs" />
@@ -54,7 +54,7 @@
     <Compile Include="Organizer.cs" />
     <Compile Include="Participant.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="Staff\RestaurantStaff.cs" />
+    <Compile Include="Staff\StaffAbstraction\RestaurantStaff.cs" />
     <Compile Include="Staff\Singer.cs" />
     <Compile Include="Staff\Waiter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

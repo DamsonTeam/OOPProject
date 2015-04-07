@@ -25,7 +25,7 @@
             {
                 return this.title;
             }
-            private set
+             set
             {
                 if (string.IsNullOrEmpty(value) || value.Length < 2)
                 {
@@ -42,7 +42,7 @@
             {
                 return this.dateTime;
             }
-            private set
+             set
             {
                 if (value == default(DateTime))
                 {
@@ -59,7 +59,7 @@
             {
                 return this.location;
             }
-            private set
+             set
             {
                 this.location = new Location();
             }
@@ -71,7 +71,7 @@
             {
                 return this.organizer;
             }
-            private set
+             set
             {
                 this.organizer = new Organizer();
             }
@@ -83,7 +83,7 @@
             {
                 return this.participantsList;
             }
-            private set
+             set
             {
                 this.participantsList = new List<Participant>();
             }
@@ -95,7 +95,7 @@
             {
                 return this.meetingPoint;
             }
-            private set
+             set
             {
                 if (string.IsNullOrEmpty(MeetingPoint))
                 {
@@ -111,7 +111,7 @@
             {
                 return this.budget;
             }
-            private set
+             set
             {
                 if (value < 0)
                 {
@@ -127,7 +127,7 @@
             {
                 return this.eventStaff;
             }
-            private set
+             set
             {
                 this.eventStaff = new List<EventStaff>();
             }
