@@ -10,17 +10,32 @@
     {
         private string firstName;
         private string lastName;
+        private int age;
 
         public Person()
         {
 
         }
 
-        public Person(string firstName, string lastName, Gender sex = Gender.NotSpecified)
+        public Person(string firstName, string lastName, int age, Gender sex = Gender.NotSpecified)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
+            this.Age = age;
             this.Gender = sex;
+        }
+
+        public int Age
+        {
+            get { return this.age; }
+           protected set
+            {
+                if (value<15 || value>50)
+                {
+                    throw new Exception("Age must be between 15 and 50.");
+                }
+                this.age = value;
+            }
         }
 
         public string FirstName
@@ -57,19 +72,6 @@
 
         public Gender Gender { get; private set; }
         
-        public void RoomDistribuition(Participant person)//  Rooms room
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void CarDistribution(Participant person, Participant driver)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PrintSummary(Event newEvent)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

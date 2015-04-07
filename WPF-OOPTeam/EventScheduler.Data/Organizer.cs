@@ -15,7 +15,7 @@
         { }
 
         public Organizer (string firstName, string lastName, Gender gender, Event eventToJoin, string email, string gsm, decimal moneyPaid) 
-            : base (firstName, lastName,gender, eventToJoin, email, gsm, moneyPaid)
+            : base(firstName, lastName, gender, eventToJoin,email, moneyPaid, isDriver)
         {
 
         }

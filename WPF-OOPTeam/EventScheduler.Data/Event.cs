@@ -6,6 +6,7 @@
     using System.Text;
     
     using EventScheduler.Data.Staff;
+using EventScheduler.Data.Interfaces;
 
     public class Event
     {
@@ -136,6 +137,27 @@
         public enum Status
         {
             Active, Cancelled, Past
+        }
+
+        public void RoomDistribuition(Participant person)//  Rooms room
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CarDistribution(string driverGSM, int seatsAvailable)
+        {
+            //var passangersInCars = new Dictionary<string, List<Participant>>();
+            //var passangers = new List<Participant>();
+            //foreach (var driverAvailable in participantsList.Where(x=>x.IsDriver==true).Where(x=>x.SeatsAvailable>0))
+            //{
+            //    for (int i = 0; i < seatsAvailable; i++)
+            //    {
+            //       throw new NotImplementedException();
+            //    }
+            //   // passangersInCars.Add(driverAvailable.GSM, );
+            //}
+
+
         }
 
         public override string ToString()

@@ -21,11 +21,13 @@ using EventScheduler.Data.Enumerations;
         private decimal moneyPaid;
         private string email;
         private int seatsAvailable;
+        private bool isDriver;
 
         public Participant()
         { }
 
-        public Participant(string firstName, string lastName,Gender gender, Event eventToJoin, string email, string gsm, decimal moneyPaid)
+        public Participant (string firstName, string lastName ,Gender gender, Event eventToJoin, string email, decimal moneyPaid, bool isDriver) 
+            :base(firstName, lastName, age, gender)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -34,6 +36,7 @@ using EventScheduler.Data.Enumerations;
             this.EMail = email;
             this.GSM = gsm;
             this.MoneyPaid = moneyPaid;
+            this.IsDriver = isDriver;
             ++participantCount;
         }
         public Gender ParticipantGender { get; private set; }
@@ -164,6 +167,19 @@ using EventScheduler.Data.Enumerations;
             using (sw)
             {
                 sw.WriteLine(wish);
+            }
+        }
+
+
+        public bool IsDriver
+        {
+            get
+            {
+                return this.isDriver;
+            }
+            set
+            {
+                this.isDriver = value;
             }
         }
     }
