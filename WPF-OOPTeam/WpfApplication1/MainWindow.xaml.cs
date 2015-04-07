@@ -67,16 +67,16 @@ namespace WpfApplication1
 
 
             #region ParticipantsMaking
-            var pesho = new Participant("Petar", "Petrov", Gender.Male, "Pepo@vgz.shtb", "02/02020202", 13,25);
-            var hasan = new Participant("Hasan", "Asenov", Gender.Male, "kyp@vgz.shtb", "0888888888", 0.20m,26);
-            var aishe = new Participant("Aishe", "AsAnova", Gender.Female, "pitka@vgz.shtb", "080808888",10,27);
-            var moni = new Participant("Simeon", "Vtori", Gender.NotSpecified, "tzar@kyp.com", "08888813564", 15,28);
-            var ciganIN = new Participant("Ivan", "Mostov", Gender.Male, "DeSeEbe@shtb.vgz", "0034/606666666", 15,29);
-            var siuleiman = new Participant("Siuleiman", "Pasi", Gender.NotSpecified, "trabant@yahoo.yes", "02/87087078", 134,30);
-            var analiq = new Participant("Analiq", "Bezfamiliq", Gender.Female, "payner@payner.begay", "08callme", 5500,31);
-            var tazi = new Participant("TaziBe", "KakIBesheImeto", Gender.Female, "tazi@onazi.com", "ZvaniMiINeMiVdiga", 10,33);
-            var krisko = new Participant("Krisko", "Drisko", Gender.NotSpecified, "BEATS@payner.begay", "0887 777 777", 0.01m,32);
-            var mariq = new Participant("Iliq", "Marieva", Gender.Female, "GZgolem@payner.begay", "0888 889 999", 1200,34);
+            var pesho = new Participant("Petar", "Petrov", Gender.Male, "Pepo@vgz.shtb", "02/02020202", 13, 25);
+            var hasan = new Participant("Hasan", "Asenov", Gender.Male, "kyp@vgz.shtb", "0888888888", 0.20m, 26);
+            var aishe = new Participant("Aishe", "AsAnova", Gender.Female, "pitka@vgz.shtb", "080808888", 10, 27);
+            var moni = new Participant("Simeon", "Vtori", Gender.NotSpecified, "tzar@kyp.com", "08888813564", 15, 28);
+            var ciganIN = new Participant("Ivan", "Mostov", Gender.Male, "DeSeEbe@shtb.vgz", "0034/606666666", 15, 29);
+            var siuleiman = new Participant("Siuleiman", "Pasi", Gender.NotSpecified, "trabant@yahoo.yes", "02/87087078", 134, 30);
+            var analiq = new Participant("Analiq", "Bezfamiliq", Gender.Female, "payner@payner.begay", "08callme", 5500, 31);
+            var tazi = new Participant("TaziBe", "KakIBesheImeto", Gender.Female, "tazi@onazi.com", "ZvaniMiINeMiVdiga", 10, 33);
+            var krisko = new Participant("Krisko", "Drisko", Gender.NotSpecified, "BEATS@payner.begay", "0887 777 777", 0.01m, 32);
+            var mariq = new Participant("Iliq", "Marieva", Gender.Female, "GZgolem@payner.begay", "0888 889 999", 1200, 34);
 
             #endregion
 
@@ -90,7 +90,7 @@ namespace WpfApplication1
             eventOne.EventStaff = new List<EventStaff>() { new DJ("MC Grozen", eventOne, 200), new Cook("Bai Ivan", eventOne, 50, true) };
             eventOne.Location = new Location(new Coordinates(40.25m, 10.12m), "Limoncheto");
             eventOne.MeetingPoint = "Pazara";
-            eventOne.Organizer = new Organizer("Ivailo", "Kenov", EventScheduler.Data.Enumerations.Gender.Male, "i_k@abv.bg", "+359 888 888 888", 1300,25);
+            eventOne.Organizer = new Organizer("Ivailo", "Kenov", EventScheduler.Data.Enumerations.Gender.Male, "i_k@abv.bg", "+359 888 888 888", 1300, 25);
             eventOne.ParticipantsList = new List<Participant>();
 
             eventOne.Title = "Naj ludoto party ever";
@@ -114,7 +114,7 @@ namespace WpfApplication1
             eventTwo.EventStaff = new List<EventStaff>() { new DJ("MC Typ", eventTwo, 200), new Singer("Analiq", eventTwo, 5000, true), new Cook("Bai Ivan", eventTwo, 50, true) };
             eventTwo.Location = new Location(new Coordinates(80.25m, 120.12m), "Riblja Corba");
             eventTwo.MeetingPoint = "NDK";
-            eventTwo.Organizer = new Organizer("Doncho", "Minkov", EventScheduler.Data.Enumerations.Gender.Male, "D_M@abv.bg", "+359 888 888 666", 6500,25);
+            eventTwo.Organizer = new Organizer("Doncho", "Minkov", EventScheduler.Data.Enumerations.Gender.Male, "D_M@abv.bg", "+359 888 888 666", 6500, 25);
             eventTwo.ParticipantsList = new List<Participant>();
             //for (int i = 0; i < 20; i++)
             //{
@@ -135,7 +135,7 @@ namespace WpfApplication1
             eventThree.EventStaff = new List<EventStaff>() { new Singer("Jochan Strauss JR", eventThree, 25000, true) };
             eventThree.Location = new Location(new Coordinates(54.25m, 50.12m), "NDK");
             eventThree.MeetingPoint = "NDK";
-            eventThree.Organizer = new Organizer("Evlogi", "Georgiev", EventScheduler.Data.Enumerations.Gender.Male, "EG@abv.bg", "+359 888 888 686", 26500,25);
+            eventThree.Organizer = new Organizer("Evlogi", "Georgiev", EventScheduler.Data.Enumerations.Gender.Male, "EG@abv.bg", "+359 888 888 686", 26500, 25);
             eventThree.ParticipantsList = new List<Participant>();
             //for (int i = 0; i < 20; i++)
             //{
@@ -159,7 +159,7 @@ namespace WpfApplication1
             eventFour.DateTime = DateTime.Now.AddDays(1);
             eventFour.Location = new Location(new Coordinates(4.25m, 0.12m), "U vas");
             eventFour.MeetingPoint = "Mr. Popa";
-            eventFour.Organizer = new Organizer("Nikolai", "Kostov", EventScheduler.Data.Enumerations.Gender.Male, "nikiIT@abv.bg", "+359 888 888 000", 2.5m,25);
+            eventFour.Organizer = new Organizer("Nikolai", "Kostov", EventScheduler.Data.Enumerations.Gender.Male, "nikiIT@abv.bg", "+359 888 888 000", 2.5m, 25);
             eventFour.ParticipantsList = new List<Participant>();
             //for (int i = 0; i < 20; i++)
             //{
@@ -237,9 +237,17 @@ namespace WpfApplication1
             // TODO SERIALIZE HERE
             MyComboBox.ItemsSource = null;
             MyComboBox.ItemsSource = eventsList;
-            
+
 
             return;
+        }
+
+        private void AddButtoin_Click(object sender, RoutedEventArgs e)
+        {
+            ParticipantAdding corko = new ParticipantAdding();
+            
+            corko.ShowDialog();
+            
         }
 
 
