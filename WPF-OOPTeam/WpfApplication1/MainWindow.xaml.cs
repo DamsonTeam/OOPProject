@@ -143,7 +143,7 @@ namespace WpfApplication1
             var index = MyComboBox.SelectedIndex;
             if (index == -1)
             {
-                MessageBox.Show("Nothing selected!");
+                //MessageBox.Show("Nothing selected!");
                 return;
             }
             var list = eventsList[index].ParticipantsList;
@@ -153,8 +153,9 @@ namespace WpfApplication1
         private void AddEvent_Click(object sender, RoutedEventArgs e)
         {
             // Show form for iput information for event.........
-            Event az = new Event() { Title = "Some stupid Event"};
-            this.eventsList.Add(az);
+            WindowAddEvent.ShowME();
+            //Event az = new Event() { Title = "Some stupid Event"};
+            //this.eventsList.Add(az);
             MyComboBox.ItemsSource = null;
             MyComboBox.ItemsSource = eventsList;
             MessageBox.Show("EventAdded");

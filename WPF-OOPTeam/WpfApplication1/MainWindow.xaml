@@ -19,7 +19,7 @@
                 <DataGridTextColumn Header="Family" Binding="{Binding LastName}"/>
                 <DataGridTextColumn Header="GSM" Binding="{Binding GSM}"/>
                 <DataGridTextColumn Header="Gender" Binding="{Binding ParticipantGender}"/>
-                <DataGridTextColumn Header="Mail" Binding="{Binding EMail}" />
+                <DataGridTextColumn Header="EMail" Binding="{Binding EMail}" />
                 <DataGridTextColumn Header="MoneyPaid" Binding="{Binding MoneyPaid}"/>
 
             </DataGrid.Columns>
