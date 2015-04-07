@@ -5,34 +5,43 @@
     using System.Linq;
     using System.Text;
 
-    public class Location
+    public class Location : IGeographicLocaion
     {
-        public int Restaurant
+        private string name;
+        Coordinates exactCoords;
+       
+        public Location(string name, Coordinates coordinates)
+        {
+            this.Name = name;
+            this.exactCoords = coordinates;
+        }
+
+        public string Name
         {
             get
             {
-                throw new System.NotImplementedException();
+                return this.name;
             }
             set
             {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("Location must have name!");
+                }
+                name = value;
             }
         }
 
-        public struct Coordinates
+        public string Locate()
         {
-            public int X { get; set; }
-            public int Y { get; set; }
+            return string.Format("{0} - {1}N {2}E",this.name,this.exactCoords.X,exactCoords.Y);
+        }
 
-            public Coordinates(int x, int y) //constructor 
-                : this()
+        public Coordinates GeographicCoordinates
+        {
+            get
             {
-                this.X = x;
-                this.Y = y;
-            }
-
-            public override string ToString()
-            {
-                return string.Format("X {0}; Y {1}", X, Y);
+                return this.exactCoords;
             }
         }
     }
