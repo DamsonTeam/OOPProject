@@ -8,7 +8,7 @@
     using Interfaces;
 using System.Collections.Generic;
 
-    [Serializable]
+    [Serializable()]
     public class Participant : Person, IParticipant, IDriver, IEventObserver
     {
         private static int participantCount = 0;

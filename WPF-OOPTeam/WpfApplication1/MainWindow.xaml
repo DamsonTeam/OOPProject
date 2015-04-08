@@ -13,16 +13,16 @@
         </Style>
     </Window.Resources>
     <Grid >
-        <DataGrid AutoGenerateColumns="True" IsReadOnly="False" x:Name="MyDataGrid" HorizontalAlignment="Left" Margin="292,55,0,0" VerticalAlignment="Top" Height="364" Width="781" >
-            <!--<DataGrid.Columns>-->
-            <!--    <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>-->
-            <!--    <DataGridTextColumn Header="Family" Binding="{Binding LastName}"/>-->
-            <!--    <DataGridTextColumn Header="GSM" Binding="{Binding GSM}"/>-->
-            <!--    <DataGridTextColumn Header="Gender" Binding="{Binding ParticipantGender}"/>-->
-            <!--    <DataGridTextColumn Header="EMail" Binding="{Binding EMail}" />-->
-            <!--    <DataGridTextColumn Header="MoneyPaid" Binding="{Binding MoneyPaid}"/>-->
-            <!---->
-            <!--</DataGrid.Columns>-->
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="False" x:Name="MyDataGrid" HorizontalAlignment="Left" Margin="292,55,0,0" VerticalAlignment="Top" Height="364" Width="781" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Family" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="GSM" Binding="{Binding GSM}"/>
+                <DataGridTextColumn Header="Gender" Binding="{Binding ParticipantGender}"/>
+                <DataGridTextColumn Header="EMail" Binding="{Binding EMail}" />
+                <DataGridTextColumn Header="MoneyPaid" Binding="{Binding MoneyPaid}"/>
+            
+            </DataGrid.Columns>
         </DataGrid> 
         <!---->
 
