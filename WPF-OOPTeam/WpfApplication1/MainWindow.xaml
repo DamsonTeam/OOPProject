@@ -13,7 +13,7 @@
         </Style>
     </Window.Resources>
     <Grid >
-        <DataGrid AutoGenerateColumns="False" IsReadOnly="False" x:Name="MyDataGrid" HorizontalAlignment="Left" Margin="292,55,0,0" VerticalAlignment="Top" Height="364" Width="781" >
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" x:Name="MyDataGrid" HorizontalAlignment="Left" Margin="292,55,0,0" VerticalAlignment="Top" Height="364" Width="781" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Header="Family" Binding="{Binding LastName}"/>
