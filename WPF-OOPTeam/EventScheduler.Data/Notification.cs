@@ -1,6 +1,7 @@
 ﻿using System;
 namespace EventScheduler.Data
 {
+    [Serializable]
     public class Notification : EventArgs
     {
         public Event Event { get; set; }

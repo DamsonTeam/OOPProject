@@ -191,19 +191,20 @@ namespace WpfApplication1
             //formatter.Serialize(s, eventFour);
             //s.Close();
 
-            SerializeEvent.SerializeEventType(eventFour, "Event.txt");
-            Event Deserialized = SerializeEvent.DeserializeEvent("Event.txt");
+            //SerializeEvent.SerializeEventType(eventFour, "Event.txt");
+            //Event Deserialized = SerializeEvent.DeserializeEvent("Event.txt");
 
 
-            //eventsList = new List<Event> { eventOne, eventTwo, eventThree, eventFour, eventFive,Deserialized };
-            // eventsList.Add(eventOne);
-            // eventsList.Add(eventTwo);
-            // eventsList.Add(eventThree);
-            // eventsList.Add(eventFour);
-            // eventsList.Add(eventFive);
-            //SerializeEvent.SerializeEventList(eventsList, "AllEvents.bin");
+           eventsList = new List<Event> { eventOne, eventTwo, eventThree, eventFour, eventFive };
+            eventsList.Add(eventOne);
+            eventsList.Add(eventTwo);
+            eventsList.Add(eventThree);
+            eventsList.Add(eventFour);
+            eventsList.Add(eventFive);
+            
+            SerializeEvent.SerializeEventList(eventsList, "..\\..\\AllEvents.bin");
 
-            List<Event> returnedList = SerializeEvent.DeserializeEventList("AllEvents.bin");
+            List<Event> returnedList = SerializeEvent.DeserializeEventList("..\\..\\AllEvents.bin");
             eventsList = returnedList;
             MyComboBox.ItemsSource = returnedList;
             #endregion
