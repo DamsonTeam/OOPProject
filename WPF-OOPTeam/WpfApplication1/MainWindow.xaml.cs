@@ -215,8 +215,8 @@ namespace WpfApplication1
             #region Serialization
 
             //Example one event serialization
-            SerializeEvent.SerializeEventType(eventFour, "Event.txt");
-            Event Deserialized = SerializeEvent.DeserializeEvent("Event.txt");
+            //SerializeEvent.SerializeEventType(eventFour, "Event.txt");
+            //Event Deserialized = SerializeEvent.DeserializeEvent("Event.txt");
 
 
            eventsList = new List<Event> { eventOne, eventTwo, eventThree, eventFour, eventFive };

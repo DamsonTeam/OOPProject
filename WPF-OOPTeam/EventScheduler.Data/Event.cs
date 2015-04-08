@@ -113,7 +113,7 @@
         {
             get
             {
-                return new List<Participant>(this.participantsList);
+                return this.participantsList;
             }
             private set
             {
