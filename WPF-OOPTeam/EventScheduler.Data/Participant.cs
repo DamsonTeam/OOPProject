@@ -26,7 +26,7 @@ using System.Collections.Generic;
         {
         }
 
-        public Participant(string firstName, string lastName, Gender gender, string email, string gsm, decimal moneyPaid, int age, bool isDriver = false)
+        public Participant(string firstName, string lastName, Gender gender,Event eventIn, string email, string gsm, decimal moneyPaid, int age, bool isDriver = false)
             : base(firstName, lastName, age, gender)
         {
             this.ParticipantGender = gender;
@@ -34,6 +34,7 @@ using System.Collections.Generic;
             this.GSM = gsm;
             this.MoneyPaid = moneyPaid;
             this.IsDriver = isDriver;
+            this.eventToAttend = eventIn;
         }
 
         public Gender ParticipantGender { get; private set; }

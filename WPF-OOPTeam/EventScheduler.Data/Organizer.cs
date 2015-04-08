@@ -14,8 +14,8 @@
         {
         }
 
-        public Organizer(string firstName, string lastName, Gender gender, string email, string gsm, decimal moneyPaid, int age)
-            : base(firstName, lastName, gender, email, gsm, moneyPaid, age)
+        public Organizer(string firstName, string lastName, Gender gender, Event eventToOrganize,string email, string gsm, decimal moneyPaid, int age)
+            : base(firstName, lastName, gender,eventToOrganize, email, gsm, moneyPaid, age)
         {
 
         }

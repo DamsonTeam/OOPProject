@@ -62,19 +62,7 @@ namespace WpfApplication1
             var rnd = new Random();
 
 
-            #region ParticipantsMaking
-            var pesho = new Participant("Petar", "Petrov", Gender.Male, "Pepo@vgz.shtb", "02/02020202", 13, 25);
-            var hasan = new Participant("Hasan", "Asenov", Gender.Male, "kyp@vgz.shtb", "0888888888", 0.20m, 26);
-            var aishe = new Participant("Aishe", "AsAnova", Gender.Female, "pitka@vgz.shtb", "080808888", 10, 27);
-            var moni = new Participant("Simeon", "Vtori", Gender.NotSpecified, "tzar@kyp.com", "08888813564", 15, 28);
-            var ciganIN = new Participant("Ivan", "Mostov", Gender.Male, "DeSeEbe@shtb.vgz", "0034/606666666", 15, 29);
-            var siuleiman = new Participant("Siuleiman", "Pasi", Gender.NotSpecified, "trabant@yahoo.yes", "02/87087078", 134, 30);
-            var analiq = new Participant("Analiq", "Bezfamiliq", Gender.Female, "payner@payner.begay", "08callme", 5500, 31);
-            var tazi = new Participant("TaziBe", "KakIBesheImeto", Gender.Female, "tazi@onazi.com", "ZvaniMiINeMiVdiga", 10, 33);
-            var krisko = new Participant("Krisko", "Drisko", Gender.NotSpecified, "BEATS@payner.begay", "0887 777 777", 0.01m, 32);
-            var mariq = new Participant("Iliq", "Marieva", Gender.Female, "GZgolem@payner.begay", "0888 889 999", 1200, 34);
 
-            #endregion
             
             #region EnventsMaking
 
@@ -84,20 +72,43 @@ namespace WpfApplication1
             var eventFour = new Event();
             var eventFive = new Event();
 
+
+
+            #region ParticipantsMaking
+            var pesho = new Participant("Petar", "Petrov", Gender.Male, eventThree, "Pepo@vgz.shtb", "02/02020202", 13, 25);
+            var hasan = new Participant("Hasan", "Asenov", Gender.Male, eventThree, "kyp@vgz.shtb", "0888888888", 0.20m, 26);
+            var aishe = new Participant("Aishe", "AsAnova", Gender.Female, eventThree, "pitka@vgz.shtb", "080808888", 10, 27);
+            var moni = new Participant("Simeon", "Vtori", Gender.NotSpecified, eventThree, "tzar@kyp.com", "08888813564", 15, 28);
+            var ciganIN = new Participant("Ivan", "Mostov", Gender.Male, eventThree, "DeSeEbe@shtb.vgz", "0034/606666666", 15, 29);
+            var siuleiman = new Participant("Siuleiman", "Pasi", Gender.NotSpecified, eventThree, "trabant@yahoo.yes", "02/87087078", 134, 30);
+            var analiq = new Participant("Analiq", "Bezfamiliq", Gender.Female, eventThree, "payner@payner.begay", "08callme", 5500, 31);
+            var tazi = new Participant("TaziBe", "KakIBesheImeto", Gender.Female, eventThree, "tazi@onazi.com", "ZvaniMiINeMiVdiga", 10, 33);
+            var krisko = new Participant("Krisko", "Drisko", Gender.NotSpecified, eventThree, "BEATS@payner.begay", "0887 777 777", 0.01m, 32);
+            var mariq = new Participant("Iliq", "Marieva", Gender.Female, eventThree, "GZgolem@payner.begay", "0888 889 999", 1200, 34);
+
+            #endregion
+
             eventOne.Budget = 1205.00m;
             eventOne.DateTime = DateTime.Parse("01.12.2015 20:00:00");
             eventOne.EventStaff = new List<EventStaff>() { new DJ("MC Grozen", eventOne, 200), new Cook("Bai Ivan", eventOne, 50, true) };
             eventOne.Location = new Location(new Coordinates(40.25m, 10.12m), "Limoncheto");
             eventOne.MeetingPoint = "Pazara";
-            eventOne.Organizer = new Organizer("Ivailo", "Kenov", EventScheduler.Data.Enumerations.Gender.Male, "i_k@abv.bg", "+359 888 888 888", 1300, 25);
+            eventOne.Organizer = new Organizer("Ivailo", "Kenov", EventScheduler.Data.Enumerations.Gender.Male,eventOne,"i_k@abv.bg", "+359 888 888 888", 1300, 25);
             eventOne.Title = "Naj ludoto party ever";
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    var gender = rnd.Next(0, 3);
-            //    eventOne.ParticipantsList.Add(
-            //        new Participant("Participant" + (i + 1).ToString(), "LastName" + (i + 1).ToString(),(Gender)gender, eventOne,
-            //            "p" + (i + 1).ToString() + "@gmail.com", "0888 888 8" + (i + 1).ToString(), 25));
-            //}
+            for (int i = 0; i < 20; i++)
+            {
+                var gender = rnd.Next(0, 3);
+                eventOne.ParticipantsList.Add(
+                    new Participant("Participant" + (i + 1).ToString(),
+                        "LastName" + (i + 1).ToString(),
+                        Gender.NotSpecified, 
+                        eventOne,
+                        "p" + (i + 1).ToString() + "@gmail.com",
+                        "0888 888 8" + (i + 1).ToString(),
+                        30, 
+                        20,
+                        true));
+            }
 
             #region Testing Observer Pattern
 
@@ -120,14 +131,14 @@ namespace WpfApplication1
             eventTwo.EventStaff = new List<EventStaff>() { new DJ("MC Typ", eventTwo, 200), new Singer("Analiq", eventTwo, 5000, true), new Cook("Bai Ivan", eventTwo, 50, true) };
             eventTwo.Location = new Location(new Coordinates(80.25m, 120.12m), "Riblja Corba");
             eventTwo.MeetingPoint = "NDK";
-            eventTwo.Organizer = new Organizer("Doncho", "Minkov", EventScheduler.Data.Enumerations.Gender.Male, "D_M@abv.bg", "+359 888 888 666", 6500, 25);
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    var gender = rnd.Next(0, 3);
-            //    eventTwo.ParticipantsList.Add(
-            //        new Participant("Participant" + (i + 21).ToString(), "LastName" + (i + 21).ToString(), (Gender)gender, eventTwo,
-            //            "p" + (i + 21).ToString() + "@gmail.com", "0888 888 8" + (i + 21).ToString(), 25));
-            //}
+            eventTwo.Organizer = new Organizer("Doncho", "Minkov", EventScheduler.Data.Enumerations.Gender.Male,eventTwo, "D_M@abv.bg", "+359 888 888 666", 6500, 25);
+            for (int i = 0; i < 20; i++)
+            {
+                var gender = rnd.Next(0, 3);
+                eventTwo.ParticipantsList.Add(
+                    new Participant("Participant" + (i + 21).ToString(), "LastName" + (i + 21).ToString(), (Gender)gender, eventTwo,
+                        "p" + (i + 21).ToString() + "@gmail.com", "0888 888 8" + (i + 21).ToString(), 40,22,true));
+            }
             eventTwo.AddParticipant(hasan);
             eventTwo.AddParticipant(analiq);
             eventTwo.AddParticipant(krisko);
@@ -140,14 +151,24 @@ namespace WpfApplication1
             eventThree.EventStaff = new List<EventStaff>() { new Singer("Jochan Strauss JR", eventThree, 25000, true) };
             eventThree.Location = new Location(new Coordinates(54.25m, 50.12m), "NDK");
             eventThree.MeetingPoint = "NDK";
-            eventThree.Organizer = new Organizer("Evlogi", "Georgiev", EventScheduler.Data.Enumerations.Gender.Male, "EG@abv.bg", "+359 888 888 686", 26500, 25);
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    var gender = rnd.Next(0, 3);
-            //    eventThree.ParticipantsList.Add(
-            //        new Participant("Participant" + (i + 321).ToString(), "LastName" + (i + 321).ToString(), (Gender)gender, eventThree,
-            //            "p" + (i + 321).ToString() + "@gmail.com", "0888 888 8" + (i + 321).ToString(), 125));
-            //}
+            eventThree.Organizer = new Organizer("Evlogi", "Georgiev", EventScheduler.Data.Enumerations.Gender.Male, eventThree, "EG@abv.bg", "+359 888 888 686", 26500, 25);
+            for (int i = 0; i < 20; i++)
+            {
+                var gender = rnd.Next(0, 3);
+                eventThree.ParticipantsList.Add(
+                    new Participant("Participant" + (i + 321).ToString(), 
+                        "LastName" + (i + 321).ToString(),
+                        (Gender)gender, 
+                        eventThree,
+                        "p" + (i + 321).ToString() + "@gmail.com",
+                        "0888 888 8" + (i + 321).ToString(), 
+                        40,
+                        34,
+                        false));
+            }
+
+
+
             eventThree.AddParticipant(hasan);
             eventThree.AddParticipant(analiq);
             eventThree.AddParticipant(krisko);
@@ -163,14 +184,21 @@ namespace WpfApplication1
             eventFour.DateTime = DateTime.Now.AddDays(1);
             eventFour.Location = new Location(new Coordinates(4.25m, 0.12m), "U vas");
             eventFour.MeetingPoint = "Mr. Popa";
-            eventFour.Organizer = new Organizer("Nikolai", "Kostov", EventScheduler.Data.Enumerations.Gender.Male, "nikiIT@abv.bg", "+359 888 888 000", 2.5m, 25);
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    var gender = rnd.Next(0, 3);
-            //    eventFour.ParticipantsList.Add(
-            //        new Participant("Participant" + (i + 4321).ToString(), "LastName" + (i + 4321).ToString(), (Gender)gender, eventFour,
-            //            "p" + (i + 4321).ToString() + "@gmail.com", "0888 888 8" + (i + 4321).ToString(), 0));
-            //}
+            eventFour.Organizer = new Organizer("Nikolai", "Kostov", EventScheduler.Data.Enumerations.Gender.Male,eventFour, "nikiIT@abv.bg", "+359 888 888 000", 2.5m, 25);
+            for (int i = 0; i < 20; i++)
+            {
+                var gender = rnd.Next(0, 3);
+                eventFour.ParticipantsList.Add(
+                    new Participant("Participant" + (i + 4321).ToString(), 
+                        "LastName" + (i + 4321).ToString(), 
+                        (Gender)gender, 
+                        eventFour,
+                        "p" + (i + 4321).ToString() + "@gmail.com", 
+                        "0888 888 8" + (i + 4321).ToString(),
+                        50, 
+                        34,
+                        true));
+            }
             eventFour.AddParticipant(hasan);
             eventFour.AddParticipant(analiq);
             eventFour.AddParticipant(krisko);
@@ -185,12 +213,8 @@ namespace WpfApplication1
             #endregion
 
             #region Serialization
-            //IFormatter formatter = new BinaryFormatter();
-            ////SerializeEvent.SerializeEventType(eventOne, "EventOne", formatter);
-            //FileStream s = new FileStream("EventName", FileMode.Create);
-            //formatter.Serialize(s, eventFour);
-            //s.Close();
 
+            //Example one event serialization
             //SerializeEvent.SerializeEventType(eventFour, "Event.txt");
             //Event Deserialized = SerializeEvent.DeserializeEvent("Event.txt");
 
